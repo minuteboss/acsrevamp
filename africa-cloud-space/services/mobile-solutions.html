@@ -1,0 +1,860 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Africa Cloud Space Mobile Solutions - Android, iOS, USSD Apps & M-Pesa Integration built for the African market.">
+    <meta name="keywords"
+        content="mobile apps, Android, iOS, USSD, M-Pesa integration, offline-first, Kenya, Africa, mobile development">
+    <title>Mobile Solutions | Africa Cloud Space</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Global Stylesheet -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Page-Specific Styles -->
+    <style>
+        /* =========================================
+           MOBILE SOLUTIONS - GREEN & DARK THEME
+           ========================================= */
+
+        :root {
+            --android-green: #3ddc84;
+            --android-dark: #073042;
+            --ussd-yellow: #fbbf24;
+            --ussd-black: #1c1c1c;
+            --mpesa-green: #4ade80;
+        }
+
+        /* Mobile First Hero */
+        .mobile-hero {
+            background: linear-gradient(135deg, var(--android-dark) 0%, #0a4a5e 50%, var(--android-dark) 100%);
+            color: #fff;
+            padding: 120px 0 180px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .mobile-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(61, 220, 132, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(251, 191, 36, 0.1) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        /* Circuit pattern */
+        .circuit-pattern {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(61, 220, 132, 0.08) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(61, 220, 132, 0.08) 1px, transparent 1px);
+            background-size: 80px 80px;
+            pointer-events: none;
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            background: rgba(61, 220, 132, 0.15);
+            color: var(--android-green);
+            border: 1px solid rgba(61, 220, 132, 0.4);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .mobile-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .mobile-hero h1 span {
+            background: linear-gradient(135deg, var(--android-green) 0%, var(--mpesa-green) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-desc {
+            font-size: 1.2rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .hero-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .hero-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .hero-feature i {
+            color: var(--android-green);
+        }
+
+        .btn-mobile {
+            background: linear-gradient(135deg, var(--android-green) 0%, #22c55e 100%);
+            color: var(--android-dark);
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 15px 40px rgba(61, 220, 132, 0.3);
+        }
+
+        .btn-mobile:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(61, 220, 132, 0.4);
+        }
+
+        /* Phone Mockups */
+        .phone-showcase {
+            position: relative;
+            height: 500px;
+        }
+
+        .phone-frame {
+            position: absolute;
+            background: linear-gradient(135deg, #1f2937 0%, #374151 100%);
+            border-radius: 40px;
+            padding: 12px;
+            box-shadow: 0 40px 80px rgba(0, 0, 0, 0.4);
+            transition: transform 0.4s ease;
+        }
+
+        .phone-frame:hover {
+            transform: translateY(-10px);
+        }
+
+        .phone-frame.main {
+            width: 260px;
+            height: 520px;
+            top: 0;
+            right: 50px;
+            z-index: 3;
+        }
+
+        .phone-frame.secondary {
+            width: 220px;
+            height: 440px;
+            top: 80px;
+            left: 40px;
+            z-index: 2;
+        }
+
+        .phone-screen {
+            background: #000;
+            border-radius: 30px;
+            height: 100%;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .phone-screen img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .phone-notch {
+            position: absolute;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 120px;
+            height: 25px;
+            background: #000;
+            border-radius: 0 0 15px 15px;
+            z-index: 5;
+        }
+
+        /* Platform Tabs */
+        .platforms-section {
+            padding: 120px 0;
+            background: #f8fafc;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-tag {
+            color: var(--android-green);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: #021a2e;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .platforms-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .platform-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 40px 30px;
+            border: 2px solid #e2e8f0;
+            transition: all 0.4s ease;
+            text-align: center;
+        }
+
+        .platform-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.08);
+        }
+
+        .platform-card.android:hover {
+            border-color: var(--android-green);
+        }
+
+        .platform-card.ios:hover {
+            border-color: #64748b;
+        }
+
+        .platform-card.ussd:hover {
+            border-color: var(--ussd-yellow);
+        }
+
+        .platform-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            margin: 0 auto 25px;
+        }
+
+        .platform-card.android .platform-icon {
+            background: linear-gradient(135deg, rgba(61, 220, 132, 0.1), rgba(61, 220, 132, 0.2));
+            color: var(--android-green);
+        }
+
+        .platform-card.ios .platform-icon {
+            background: linear-gradient(135deg, #f1f5f9, #e2e8f0);
+            color: #1e293b;
+        }
+
+        .platform-card.ussd .platform-icon {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(251, 191, 36, 0.2));
+            color: #b45309;
+        }
+
+        .platform-card h3 {
+            font-size: 1.5rem;
+            color: #021a2e;
+            margin-bottom: 15px;
+        }
+
+        .platform-card p {
+            color: #64748b;
+            line-height: 1.7;
+            margin-bottom: 25px;
+        }
+
+        .platform-features {
+            text-align: left;
+            list-style: none;
+        }
+
+        .platform-features li {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 0;
+            color: #334155;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .platform-features li:last-child {
+            border-bottom: none;
+        }
+
+        .platform-features li i {
+            color: #10b981;
+            font-size: 14px;
+        }
+
+        /* USSD/Offline Section */
+        .ussd-section {
+            padding: 120px 0;
+            background: linear-gradient(135deg, var(--ussd-black) 0%, #2d2d2d 100%);
+            color: #fff;
+        }
+
+        .ussd-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+        }
+
+        .ussd-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 25px;
+        }
+
+        .ussd-content h2 span {
+            color: var(--ussd-yellow);
+        }
+
+        .ussd-content p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 40px;
+        }
+
+        .ussd-features {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 25px;
+        }
+
+        .ussd-feature {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 25px;
+        }
+
+        .ussd-feature i {
+            font-size: 28px;
+            color: var(--ussd-yellow);
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .ussd-feature h4 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #fff;
+        }
+
+        .ussd-feature p {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 0;
+            line-height: 1.6;
+        }
+
+        /* USSD Demo */
+        .ussd-demo {
+            background: #000;
+            border-radius: 30px;
+            padding: 40px 30px;
+            font-family: 'Courier New', monospace;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+        }
+
+        .ussd-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            margin-bottom: 30px;
+            padding-bottom: 20px;
+            border-bottom: 1px solid #333;
+        }
+
+        .ussd-carrier {
+            color: #fff;
+            font-size: 0.9rem;
+        }
+
+        .ussd-signal {
+            display: flex;
+            gap: 3px;
+        }
+
+        .ussd-signal span {
+            width: 4px;
+            height: 12px;
+            background: var(--android-green);
+            border-radius: 2px;
+        }
+
+        .ussd-signal span:nth-child(2) {
+            height: 16px;
+        }
+
+        .ussd-signal span:nth-child(3) {
+            height: 20px;
+        }
+
+        .ussd-signal span:nth-child(4) {
+            height: 24px;
+            opacity: 0.3;
+        }
+
+        .ussd-body {
+            color: var(--ussd-yellow);
+            font-size: 1rem;
+            line-height: 2;
+        }
+
+        .ussd-input {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            margin-top: 30px;
+            padding: 15px;
+            background: #1a1a1a;
+            border-radius: 10px;
+        }
+
+        .ussd-input span {
+            color: var(--android-green);
+        }
+
+        .cursor-blink {
+            display: inline-block;
+            width: 10px;
+            height: 20px;
+            background: var(--ussd-yellow);
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0;
+            }
+        }
+
+        /* M-Pesa Integration */
+        .mpesa-section {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+
+        .mpesa-card {
+            background: linear-gradient(135deg, #047857 0%, #059669 100%);
+            border-radius: 24px;
+            padding: 60px;
+            display: grid;
+            grid-template-columns: 2fr 1fr;
+            gap: 60px;
+            align-items: center;
+            color: #fff;
+        }
+
+        .mpesa-content h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .mpesa-content p {
+            font-size: 1.1rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 30px;
+            line-height: 1.7;
+        }
+
+        .mpesa-badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+        }
+
+        .mpesa-badge {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 12px 20px;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .mpesa-visual {
+            text-align: center;
+            font-size: 120px;
+        }
+
+        /* CTA */
+        .mobile-cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, var(--android-dark) 0%, #0a4a5e 100%);
+            text-align: center;
+        }
+
+        .mobile-cta h2 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .mobile-cta h2 span {
+            color: var(--android-green);
+        }
+
+        .mobile-cta p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .phone-showcase {
+                display: none;
+            }
+
+            .platforms-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ussd-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .ussd-demo {
+                display: none;
+            }
+
+            .mpesa-card {
+                grid-template-columns: 1fr;
+            }
+
+            .mpesa-visual {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .mobile-hero {
+                padding: 80px 0 120px;
+            }
+
+            .mobile-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .ussd-features {
+                grid-template-columns: 1fr;
+            }
+
+            .mpesa-card {
+                padding: 40px 30px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Container -->
+    <header id="header-slot" class="main-header"></header>
+
+    <!-- Mobile First Hero -->
+    <section class="mobile-hero">
+        <div class="circuit-pattern"></div>
+
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="hero-badge">
+                        <i class="fas fa-mobile-alt"></i> Mobile First
+                    </span>
+                    <h1>Apps Built for <span>Africa's Reality</span></h1>
+                    <p class="hero-desc">
+                        Native Android & iOS apps, progressive web apps, and USSD menus
+                        designed for low bandwidth, offline access, and M-Pesa integration.
+                    </p>
+
+                    <div class="hero-features">
+                        <div class="hero-feature">
+                            <i class="fas fa-wifi-slash"></i>
+                            <span>Offline-First</span>
+                        </div>
+                        <div class="hero-feature">
+                            <i class="fab fa-android"></i>
+                            <span>Android + iOS</span>
+                        </div>
+                        <div class="hero-feature">
+                            <i class="fas fa-sms"></i>
+                            <span>USSD Menus</span>
+                        </div>
+                    </div>
+
+                    <a href="#contact" class="btn-mobile">
+                        <i class="fas fa-rocket"></i> Start Your App Project
+                    </a>
+                </div>
+
+                <div class="phone-showcase">
+                    <div class="phone-frame main">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <img src="https://images.unsplash.com/photo-1512941937669-90a1b58e7e9c?w=300&h=600&fit=crop"
+                                alt="Mobile App Screen">
+                        </div>
+                    </div>
+                    <div class="phone-frame secondary">
+                        <div class="phone-notch"></div>
+                        <div class="phone-screen">
+                            <img src="https://images.unsplash.com/photo-1555774698-0b77e0d5fac6?w=250&h=500&fit=crop"
+                                alt="App Interface">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Platforms Section -->
+    <section class="platforms-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Platforms</span>
+                <h2 class="section-title">Build Once, Reach Everyone</h2>
+            </div>
+
+            <div class="platforms-grid">
+                <!-- Android -->
+                <div class="platform-card android">
+                    <div class="platform-icon">
+                        <i class="fab fa-android"></i>
+                    </div>
+                    <h3>Android Apps</h3>
+                    <p>Native Kotlin/Java apps optimized for the African smartphone market.</p>
+                    <ul class="platform-features">
+                        <li><i class="fas fa-check-circle"></i> Offline data sync</li>
+                        <li><i class="fas fa-check-circle"></i> Low storage footprint</li>
+                        <li><i class="fas fa-check-circle"></i> Background M-Pesa push</li>
+                        <li><i class="fas fa-check-circle"></i> Play Store deployment</li>
+                    </ul>
+                </div>
+
+                <!-- iOS -->
+                <div class="platform-card ios">
+                    <div class="platform-icon">
+                        <i class="fab fa-apple"></i>
+                    </div>
+                    <h3>iOS Apps</h3>
+                    <p>Beautiful Swift apps for iPhone and iPad with premium UX.</p>
+                    <ul class="platform-features">
+                        <li><i class="fas fa-check-circle"></i> SwiftUI native design</li>
+                        <li><i class="fas fa-check-circle"></i> Apple Pay + M-Pesa</li>
+                        <li><i class="fas fa-check-circle"></i> Push notifications</li>
+                        <li><i class="fas fa-check-circle"></i> App Store compliant</li>
+                    </ul>
+                </div>
+
+                <!-- USSD -->
+                <div class="platform-card ussd">
+                    <div class="platform-icon">
+                        <i class="fas fa-hashtag"></i>
+                    </div>
+                    <h3>USSD Menus</h3>
+                    <p>Reach feature phones and low-connectivity users with *XXX# menus.</p>
+                    <ul class="platform-features">
+                        <li><i class="fas fa-check-circle"></i> No internet required</li>
+                        <li><i class="fas fa-check-circle"></i> Works on any phone</li>
+                        <li><i class="fas fa-check-circle"></i> M-Pesa STK push</li>
+                        <li><i class="fas fa-check-circle"></i> Multi-language support</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- USSD / Offline Section -->
+    <section class="ussd-section">
+        <div class="container">
+            <div class="ussd-grid">
+                <div class="ussd-content">
+                    <h2>Built for <span>No Internet</span></h2>
+                    <p>
+                        In Africa, connectivity is a privilege, not a guarantee. Our apps are designed
+                        from the ground up to work offline, sync when connected, and reach users
+                        who only have basic feature phones through USSD menus.
+                    </p>
+
+                    <div class="ussd-features">
+                        <div class="ussd-feature">
+                            <i class="fas fa-database"></i>
+                            <h4>Local Database</h4>
+                            <p>All data stored locally, syncs automatically when online.</p>
+                        </div>
+                        <div class="ussd-feature">
+                            <i class="fas fa-compress-arrows-alt"></i>
+                            <h4>Data Compression</h4>
+                            <p>Minimal bandwidth usage for expensive data plans.</p>
+                        </div>
+                        <div class="ussd-feature">
+                            <i class="fas fa-phone"></i>
+                            <h4>USSD Fallback</h4>
+                            <p>Critical functions available via *XXX# menus.</p>
+                        </div>
+                        <div class="ussd-feature">
+                            <i class="fas fa-sms"></i>
+                            <h4>SMS Integration</h4>
+                            <p>Send notifications and alerts via SMS.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ussd-demo">
+                    <div class="ussd-header">
+                        <span class="ussd-carrier">Safaricom KE</span>
+                        <div class="ussd-signal">
+                            <span></span><span></span><span></span><span></span>
+                        </div>
+                    </div>
+                    <div class="ussd-body">
+                        <div>Welcome to CloudSpace</div>
+                        <div>1. Check Balance</div>
+                        <div>2. Make Payment</div>
+                        <div>3. View Statement</div>
+                        <div>4. Get Support</div>
+                    </div>
+                    <div class="ussd-input">
+                        <span>Enter option:</span>
+                        <span class="cursor-blink"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- M-Pesa Integration -->
+    <section class="mpesa-section">
+        <div class="container">
+            <div class="mpesa-card">
+                <div class="mpesa-content">
+                    <h2>Deep M-Pesa Integration</h2>
+                    <p>
+                        Every mobile solution we build comes with full Safaricom M-Pesa integration.
+                        STK Push, C2B, B2C, and real-time transaction callbacks built right in.
+                    </p>
+                    <div class="mpesa-badges">
+                        <span class="mpesa-badge"><i class="fas fa-check"></i> STK Push</span>
+                        <span class="mpesa-badge"><i class="fas fa-check"></i> C2B Paybill</span>
+                        <span class="mpesa-badge"><i class="fas fa-check"></i> B2C Disbursement</span>
+                        <span class="mpesa-badge"><i class="fas fa-check"></i> Real-time Callbacks</span>
+                        <span class="mpesa-badge"><i class="fas fa-check"></i> Transaction Reversal</span>
+                    </div>
+                </div>
+                <div class="mpesa-visual">💳</div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA -->
+    <section class="mobile-cta">
+        <div class="container">
+            <h2>Ready to Go <span>Mobile</span>?</h2>
+            <p>
+                Let's build an app that works for your users, not against them.
+                Designed for Africa's unique mobile landscape.
+            </p>
+            <a href="mailto:mobile@cloudspace.co.ke" class="btn-mobile">
+                <i class="fas fa-calendar-check"></i> Discuss Your App Idea
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer Container -->
+    <footer id="footer-slot" class="footer"></footer>
+
+    <!-- Loader Script -->
+    <script src="../js/loader.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            loadComponent('header-slot', '../header.html');
+            loadComponent('footer-slot', '../footer.html');
+        });
+    </script>
+</body>
+
+</html>

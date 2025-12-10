@@ -1,0 +1,705 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Africa Cloud Space AI & Data Analytics - Predictive Analytics, Machine Learning, and Business Intelligence solutions designed for African organizations.">
+    <meta name="keywords"
+        content="AI, artificial intelligence, data analytics, machine learning, predictive analytics, chatbots, Kenya, Africa">
+    <title>AI & Data Analytics | Africa Cloud Space</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Global Stylesheet -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Page-Specific Styles -->
+    <style>
+        /* =========================================
+           AI & DATA PAGE - PURPLE THEME
+           ========================================= */
+
+        :root {
+            --ai-purple: #7c3aed;
+            --ai-violet: #8b5cf6;
+            --ai-light: #ede9fe;
+            --ai-dark: #4c1d95;
+        }
+
+        /* Neural Network Hero */
+        .ai-hero {
+            background: linear-gradient(135deg, #0f0f23 0%, #1a1a3e 50%, #2d1b4e 100%);
+            color: #fff;
+            padding: 120px 0 160px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .ai-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 30% 70%, rgba(124, 58, 237, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 70% 30%, rgba(139, 92, 246, 0.15) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        /* Animated grid pattern */
+        .neural-grid {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(124, 58, 237, 0.1) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(124, 58, 237, 0.1) 1px, transparent 1px);
+            background-size: 60px 60px;
+            animation: gridPulse 4s ease-in-out infinite;
+            pointer-events: none;
+        }
+
+        @keyframes gridPulse {
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 0.6;
+            }
+        }
+
+        /* Floating orbs */
+        .ai-orb {
+            position: absolute;
+            border-radius: 50%;
+            filter: blur(80px);
+            pointer-events: none;
+            animation: float 6s ease-in-out infinite;
+        }
+
+        .ai-orb.purple {
+            width: 400px;
+            height: 400px;
+            background: rgba(124, 58, 237, 0.3);
+            top: -100px;
+            right: -100px;
+        }
+
+        .ai-orb.violet {
+            width: 300px;
+            height: 300px;
+            background: rgba(139, 92, 246, 0.2);
+            bottom: -50px;
+            left: 10%;
+            animation-delay: 2s;
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) scale(1);
+            }
+
+            50% {
+                transform: translateY(-30px) scale(1.05);
+            }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-badge {
+            background: rgba(124, 58, 237, 0.2);
+            color: var(--ai-violet);
+            border: 1px solid rgba(124, 58, 237, 0.4);
+            padding: 10px 24px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .hero-badge i {
+            animation: pulse 2s ease-in-out infinite;
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(1.2);
+            }
+        }
+
+        .ai-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 25px;
+        }
+
+        .ai-hero h1 span {
+            background: linear-gradient(135deg, #a78bfa 0%, #c4b5fd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-desc {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.7);
+            line-height: 1.7;
+            max-width: 650px;
+            margin: 0 auto 40px auto;
+        }
+
+        .btn-ai {
+            background: linear-gradient(135deg, var(--ai-purple) 0%, var(--ai-violet) 100%);
+            color: #fff;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            box-shadow: 0 15px 40px rgba(124, 58, 237, 0.3);
+        }
+
+        .btn-ai:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(124, 58, 237, 0.4);
+        }
+
+        /* Stats Strip */
+        .ai-stats {
+            background: linear-gradient(90deg, #1a1a3e 0%, #2d1b4e 50%, #1a1a3e 100%);
+            border-top: 1px solid rgba(124, 58, 237, 0.3);
+            border-bottom: 1px solid rgba(124, 58, 237, 0.3);
+            padding: 50px 0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: var(--ai-violet);
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 0.95rem;
+        }
+
+        /* Solutions Cards */
+        .ai-solutions {
+            padding: 120px 0;
+            background: #f8fafc;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-tag {
+            color: var(--ai-purple);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: #021a2e;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .section-desc {
+            color: #64748b;
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .solutions-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .solution-card {
+            background: #fff;
+            border-radius: 24px;
+            padding: 40px 30px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .solution-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, var(--ai-purple), var(--ai-violet));
+            transform: scaleX(0);
+            transition: transform 0.4s ease;
+        }
+
+        .solution-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(124, 58, 237, 0.1);
+        }
+
+        .solution-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .solution-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, var(--ai-light), #ddd6fe);
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: var(--ai-purple);
+            margin-bottom: 25px;
+        }
+
+        .solution-card h3 {
+            font-size: 1.4rem;
+            color: #021a2e;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .solution-card p {
+            color: #64748b;
+            line-height: 1.7;
+            margin-bottom: 20px;
+        }
+
+        .solution-tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+        }
+
+        .solution-tag {
+            background: var(--ai-light);
+            color: var(--ai-purple);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        /* Use Cases */
+        .use-cases {
+            padding: 120px 0;
+            background: linear-gradient(180deg, #0f0f23 0%, #1a1a3e 100%);
+            color: #fff;
+        }
+
+        .cases-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 40px;
+        }
+
+        .case-card {
+            background: rgba(255, 255, 255, 0.03);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(124, 58, 237, 0.2);
+            border-radius: 24px;
+            padding: 40px;
+            transition: all 0.3s ease;
+        }
+
+        .case-card:hover {
+            background: rgba(255, 255, 255, 0.06);
+            border-color: rgba(124, 58, 237, 0.4);
+            transform: translateY(-5px);
+        }
+
+        .case-icon {
+            width: 60px;
+            height: 60px;
+            background: linear-gradient(135deg, var(--ai-purple), var(--ai-violet));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 24px;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .case-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 12px;
+            color: #fff;
+        }
+
+        .case-card p {
+            color: rgba(255, 255, 255, 0.6);
+            line-height: 1.7;
+        }
+
+        /* CTA Section */
+        .ai-cta {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+
+        .cta-card {
+            background: linear-gradient(135deg, #0f0f23 0%, #2d1b4e 100%);
+            border-radius: 32px;
+            padding: 80px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(124, 58, 237, 0.2) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-card h2 {
+            font-size: 2.5rem;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .cta-card h2 span {
+            background: linear-gradient(135deg, #a78bfa, #c4b5fd);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .cta-card p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto 40px;
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .solutions-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .cases-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .ai-hero {
+                padding: 80px 0 120px;
+            }
+
+            .ai-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .solutions-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta-card {
+                padding: 50px 30px;
+            }
+
+            .cta-card h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Container -->
+    <header id="header-slot" class="main-header"></header>
+
+    <!-- Neural Network Hero -->
+    <section class="ai-hero">
+        <div class="neural-grid"></div>
+        <div class="ai-orb purple"></div>
+        <div class="ai-orb violet"></div>
+
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge">
+                    <i class="fas fa-brain"></i> Artificial Intelligence
+                </span>
+                <h1>Intelligence Built for <span>Africa</span></h1>
+                <p class="hero-desc">
+                    Practical AI solutions that transform data into actionable insights.
+                    From predicting student performance to optimizing water distribution,
+                    we bring machine learning to real African challenges.
+                </p>
+                <a href="#contact" class="btn-ai">
+                    <i class="fas fa-robot"></i> Explore AI Solutions
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Strip -->
+    <section class="ai-stats">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>10M+</h3>
+                    <p>Data Points Processed Daily</p>
+                </div>
+                <div class="stat-item">
+                    <h3>95%</h3>
+                    <p>Prediction Accuracy</p>
+                </div>
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>AI Models Deployed</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Real-time Analytics</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- AI Solutions -->
+    <section class="ai-solutions">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our AI Capabilities</span>
+                <h2 class="section-title">Intelligent Solutions for Complex Problems</h2>
+                <p class="section-desc">
+                    Leverage the power of machine learning and data analytics
+                    to make smarter decisions and automate operations.
+                </p>
+            </div>
+
+            <div class="solutions-grid">
+                <!-- Predictive Analytics -->
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-chart-line"></i>
+                    </div>
+                    <h3>Predictive Analytics</h3>
+                    <p>
+                        Forecast trends, predict outcomes, and make data-driven decisions
+                        with our machine learning models tailored for African markets.
+                    </p>
+                    <div class="solution-tags">
+                        <span class="solution-tag">Forecasting</span>
+                        <span class="solution-tag">Risk Analysis</span>
+                        <span class="solution-tag">Demand Planning</span>
+                    </div>
+                </div>
+
+                <!-- Chatbots & NLP -->
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-comments"></i>
+                    </div>
+                    <h3>AI Chatbots & NLP</h3>
+                    <p>
+                        Intelligent conversational agents that understand Swahili and English,
+                        providing 24/7 customer support across SMS, WhatsApp, and web.
+                    </p>
+                    <div class="solution-tags">
+                        <span class="solution-tag">Swahili NLP</span>
+                        <span class="solution-tag">WhatsApp Bots</span>
+                        <span class="solution-tag">Voice AI</span>
+                    </div>
+                </div>
+
+                <!-- Business Intelligence -->
+                <div class="solution-card">
+                    <div class="solution-icon">
+                        <i class="fas fa-chart-pie"></i>
+                    </div>
+                    <h3>Business Intelligence</h3>
+                    <p>
+                        Transform raw data into beautiful, interactive dashboards
+                        that reveal insights and drive strategic decisions.
+                    </p>
+                    <div class="solution-tags">
+                        <span class="solution-tag">Dashboards</span>
+                        <span class="solution-tag">Reports</span>
+                        <span class="solution-tag">KPI Tracking</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Use Cases -->
+    <section class="use-cases">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="color: var(--ai-violet);">Practical Applications</span>
+                <h2 class="section-title" style="color: #fff;">AI in Action Across Industries</h2>
+                <p class="section-desc" style="color: rgba(255,255,255,0.6);">
+                    Real-world applications solving real African challenges.
+                </p>
+            </div>
+
+            <div class="cases-grid">
+                <div class="case-card">
+                    <div class="case-icon"><i class="fas fa-graduation-cap"></i></div>
+                    <h3>Predictive Analytics for Schools</h3>
+                    <p>
+                        Identify at-risk students before they fail. Our AI analyzes attendance,
+                        grades, and engagement patterns to flag students who need intervention.
+                    </p>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-icon"><i class="fas fa-tint"></i></div>
+                    <h3>Water Usage Pattern Analysis</h3>
+                    <p>
+                        Detect leaks, predict demand, and optimize distribution. Smart analytics
+                        for water utilities that reduce losses and improve service delivery.
+                    </p>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-icon"><i class="fas fa-headset"></i></div>
+                    <h3>Automated Customer Support</h3>
+                    <p>
+                        Multilingual chatbots that handle 80% of customer queries automatically,
+                        reducing support costs while improving response times.
+                    </p>
+                </div>
+
+                <div class="case-card">
+                    <div class="case-icon"><i class="fas fa-store"></i></div>
+                    <h3>Retail Demand Forecasting</h3>
+                    <p>
+                        Predict what products will sell, when they'll sell, and how much stock to order.
+                        AI-powered inventory optimization for retailers.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="ai-cta">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-content">
+                    <h2>Ready to <span>Unlock Your Data</span>?</h2>
+                    <p>
+                        Schedule a consultation with our data science team to explore
+                        how AI can transform your operations and drive growth.
+                    </p>
+                    <a href="mailto:ai@cloudspace.co.ke" class="btn-ai">
+                        <i class="fas fa-calendar-check"></i> Book AI Consultation
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Container -->
+    <footer id="footer-slot" class="footer"></footer>
+
+    <!-- Loader Script -->
+    <script src="../js/loader.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            loadComponent('header-slot', '../header.html');
+            loadComponent('footer-slot', '../footer.html');
+        });
+    </script>
+</body>
+
+</html>

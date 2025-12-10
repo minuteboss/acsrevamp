@@ -1,0 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Africa Cloud Space Enterprise Services - Custom Software Development, Cybersecurity & ICT Infrastructure for Governments, NGOs, and Large Corporations.">
+    <meta name="keywords" content="enterprise software, custom development, cybersecurity, ICT infrastructure, cloud migration, Kenya, Africa">
+    <title>Enterprise Services | Africa Cloud Space</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Global Stylesheet -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Page-Specific Styles -->
+    <style>
+        /* =========================================
+           ENTERPRISE PAGE CUSTOM STYLES
+           ========================================= */
+        
+        /* Technical Hero */
+        .enterprise-hero {
+            background: linear-gradient(135deg, #021a2e 0%, #032d50 50%, #021a2e 100%);
+            color: var(--white);
+            padding: 120px 0 140px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .enterprise-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                radial-gradient(circle at 20% 80%, rgba(6, 182, 212, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(6, 182, 212, 0.08) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .enterprise-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                linear-gradient(rgba(6, 182, 212, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(6, 182, 212, 0.03) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-badge {
+            background: rgba(6, 182, 212, 0.15);
+            color: #06b6d4;
+            border: 1px solid rgba(6, 182, 212, 0.4);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 30px;
+            display: inline-block;
+        }
+
+        .enterprise-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #ffffff 0%, #94a3b8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .enterprise-hero h1 span {
+            background: linear-gradient(135deg, #06b6d4 0%, #22d3ee 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .hero-subhead {
+            font-size: 1.25rem;
+            color: #94a3b8;
+            line-height: 1.7;
+            max-width: 650px;
+            margin: 0 auto 40px auto;
+        }
+
+        .hero-clients {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-top: 50px;
+            opacity: 0.7;
+        }
+
+        .hero-clients span {
+            font-size: 0.85rem;
+            color: #64748b;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 500;
+        }
+
+        /* Tech Stack Strip */
+        .tech-strip {
+            background: #0f172a;
+            padding: 30px 0;
+            border-top: 1px solid rgba(6, 182, 212, 0.2);
+            border-bottom: 1px solid rgba(6, 182, 212, 0.2);
+        }
+
+        .tech-stack {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 50px;
+            flex-wrap: wrap;
+        }
+
+        .tech-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #94a3b8;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .tech-item:hover {
+            color: #06b6d4;
+        }
+
+        .tech-item i {
+            font-size: 1.5rem;
+            color: #06b6d4;
+        }
+
+        /* Service Pillars Grid */
+        .pillars-section {
+            padding: 120px 0;
+            background: var(--bg-offwhite);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-tag {
+            color: #06b6d4;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: #021a2e;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .section-desc {
+            color: var(--text-grey);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .pillars-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .pillar-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 45px 35px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .pillar-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, #06b6d4, #0077b6);
+            transform: scaleX(0);
+            transform-origin: left;
+            transition: transform 0.4s ease;
+        }
+
+        .pillar-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(2, 26, 46, 0.1);
+        }
+
+        .pillar-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .pillar-icon {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(0, 119, 182, 0.1));
+            border-radius: 16px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 28px;
+            color: #06b6d4;
+            margin-bottom: 25px;
+        }
+
+        .pillar-card h3 {
+            font-size: 1.5rem;
+            color: #021a2e;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .pillar-card p {
+            color: var(--text-grey);
+            margin-bottom: 25px;
+            line-height: 1.7;
+        }
+
+        .pillar-features {
+            list-style: none;
+            margin-top: 20px;
+        }
+
+        .pillar-features li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            padding: 10px 0;
+            color: #334155;
+            font-size: 0.95rem;
+            border-bottom: 1px solid #f1f5f9;
+        }
+
+        .pillar-features li:last-child {
+            border-bottom: none;
+        }
+
+        .pillar-features li i {
+            color: #10b981;
+            font-size: 14px;
+        }
+
+        /* Process Timeline */
+        .process-section {
+            padding: 120px 0;
+            background: linear-gradient(180deg, #021a2e 0%, #0f172a 100%);
+            color: var(--white);
+        }
+
+        .process-timeline {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            margin-top: 60px;
+            position: relative;
+        }
+
+        .process-timeline::before {
+            content: '';
+            position: absolute;
+            top: 50px;
+            left: 16.67%;
+            right: 16.67%;
+            height: 2px;
+            background: linear-gradient(90deg, #06b6d4 0%, #0077b6 50%, #06b6d4 100%);
+            z-index: 1;
+        }
+
+        .process-step {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .step-number {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #06b6d4, #0077b6);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: var(--white);
+            margin: 0 auto 30px auto;
+            box-shadow: 0 10px 40px rgba(6, 182, 212, 0.3);
+            border: 4px solid #0f172a;
+        }
+
+        .step-icon {
+            font-size: 24px;
+        }
+
+        .process-step h3 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .process-step p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            padding: 0 20px;
+        }
+
+        /* Consultation CTA */
+        .cta-section {
+            padding: 100px 0;
+            background: var(--bg-offwhite);
+        }
+
+        .cta-card {
+            background: linear-gradient(135deg, #021a2e 0%, #032d50 100%);
+            border-radius: 24px;
+            padding: 80px 60px;
+            display: grid;
+            grid-template-columns: 1.5fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -20%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.15), transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .cta-content p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            margin-bottom: 35px;
+            line-height: 1.7;
+        }
+
+        .cta-features {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+
+        .cta-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #94a3b8;
+            font-size: 0.9rem;
+        }
+
+        .cta-feature i {
+            color: #06b6d4;
+        }
+
+        .btn-engineer {
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            color: var(--white);
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-engineer:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(6, 182, 212, 0.4);
+        }
+
+        .cta-image {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-image img {
+            width: 100%;
+            border-radius: 16px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.3);
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: var(--white);
+            padding: 60px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item h3 {
+            font-size: 3rem;
+            color: #06b6d4;
+            font-weight: 800;
+            margin-bottom: 10px;
+        }
+
+        .stat-item p {
+            color: var(--text-grey);
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .pillars-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .process-timeline {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .process-timeline::before {
+                display: none;
+            }
+
+            .cta-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+                padding: 60px 40px;
+            }
+
+            .cta-features {
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+
+            .cta-image {
+                display: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .enterprise-hero {
+                padding: 80px 0 100px 0;
+            }
+
+            .enterprise-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subhead {
+                font-size: 1rem;
+            }
+
+            .tech-stack {
+                gap: 25px;
+            }
+
+            .tech-item span {
+                display: none;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hero-clients {
+                flex-wrap: wrap;
+                gap: 20px;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-content h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Container -->
+    <header id="header-slot" class="main-header"></header>
+
+    <!-- Technical Hero Section -->
+    <section class="enterprise-hero">
+        <div class="container">
+            <div class="hero-content">
+                <span class="hero-badge"><i class="fas fa-shield-alt"></i> Enterprise Solutions</span>
+                <h1>Custom Engineering for <span>Complex Challenges</span></h1>
+                <p class="hero-subhead">
+                    We partner with Governments, NGOs, and Large Corporations across Africa to architect 
+                    and deploy mission-critical systems that drive transformation and operational excellence.
+                </p>
+                <a href="#consultation" class="btn-engineer">
+                    <i class="fas fa-headset"></i> Speak to a Lead Engineer
+                </a>
+                <div class="hero-clients">
+                    <span><i class="fas fa-landmark"></i> Government Agencies</span>
+                    <span><i class="fas fa-hand-holding-heart"></i> International NGOs</span>
+                    <span><i class="fas fa-building"></i> Enterprise Corporations</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Tech Stack Strip -->
+    <section class="tech-strip">
+        <div class="container">
+            <div class="tech-stack">
+                <div class="tech-item">
+                    <i class="fab fa-python"></i>
+                    <span>Python</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-react"></i>
+                    <span>React</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-node-js"></i>
+                    <span>Node.js</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-aws"></i>
+                    <span>AWS</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-microsoft"></i>
+                    <span>Azure</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-database"></i>
+                    <span>PostgreSQL</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fab fa-docker"></i>
+                    <span>Docker</span>
+                </div>
+                <div class="tech-item">
+                    <i class="fas fa-cubes"></i>
+                    <span>Kubernetes</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="stats-bar">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <h3>50+</h3>
+                    <p>Enterprise Clients Served</p>
+                </div>
+                <div class="stat-item">
+                    <h3>99.9%</h3>
+                    <p>System Uptime Guarantee</p>
+                </div>
+                <div class="stat-item">
+                    <h3>15+</h3>
+                    <p>Years Industry Experience</p>
+                </div>
+                <div class="stat-item">
+                    <h3>24/7</h3>
+                    <p>Technical Support</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Pillars Section -->
+    <section class="pillars-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Expertise</span>
+                <h2 class="section-title">Enterprise Service Pillars</h2>
+                <p class="section-desc">
+                    End-to-end technology solutions engineered for scale, security, and performance.
+                </p>
+            </div>
+
+            <div class="pillars-grid">
+                <!-- Pillar 1: Custom Software Development -->
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <i class="fas fa-code"></i>
+                    </div>
+                    <h3>Custom Software Development</h3>
+                    <p>
+                        Bespoke digital solutions tailored to your organization's unique workflows and operational requirements.
+                    </p>
+                    <ul class="pillar-features">
+                        <li><i class="fas fa-check-circle"></i> Enterprise Web Portals & Dashboards</li>
+                        <li><i class="fas fa-check-circle"></i> Cross-Platform Mobile Applications</li>
+                        <li><i class="fas fa-check-circle"></i> API Development & Integration</li>
+                        <li><i class="fas fa-check-circle"></i> Legacy System Modernization</li>
+                        <li><i class="fas fa-check-circle"></i> Real-time Data Processing Systems</li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 2: Cybersecurity & Audit -->
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <i class="fas fa-shield-alt"></i>
+                    </div>
+                    <h3>Cybersecurity & Audit</h3>
+                    <p>
+                        Comprehensive security assessments and compliance frameworks to protect your critical infrastructure.
+                    </p>
+                    <ul class="pillar-features">
+                        <li><i class="fas fa-check-circle"></i> Penetration Testing & Vulnerability Assessment</li>
+                        <li><i class="fas fa-check-circle"></i> Data Protection & GDPR Compliance</li>
+                        <li><i class="fas fa-check-circle"></i> Security Operations Center (SOC)</li>
+                        <li><i class="fas fa-check-circle"></i> Incident Response & Recovery</li>
+                        <li><i class="fas fa-check-circle"></i> Employee Security Training</li>
+                    </ul>
+                </div>
+
+                <!-- Pillar 3: ICT Infrastructure -->
+                <div class="pillar-card">
+                    <div class="pillar-icon">
+                        <i class="fas fa-server"></i>
+                    </div>
+                    <h3>ICT Infrastructure</h3>
+                    <p>
+                        Robust, scalable infrastructure solutions from data centers to cloud environments optimized for Africa.
+                    </p>
+                    <ul class="pillar-features">
+                        <li><i class="fas fa-check-circle"></i> Cloud Migration & Architecture (AWS/Azure)</li>
+                        <li><i class="fas fa-check-circle"></i> Server Deployment & Management</li>
+                        <li><i class="fas fa-check-circle"></i> Network Design & Optimization</li>
+                        <li><i class="fas fa-check-circle"></i> Disaster Recovery Planning</li>
+                        <li><i class="fas fa-check-circle"></i> DevOps & CI/CD Pipeline Setup</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Process Timeline Section -->
+    <section class="process-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="color: #06b6d4;">Our Process</span>
+                <h2 class="section-title" style="color: #fff;">Engineering Excellence, Delivered</h2>
+                <p class="section-desc" style="color: #94a3b8;">
+                    A proven methodology that ensures transparency, agility, and measurable outcomes.
+                </p>
+            </div>
+
+            <div class="process-timeline">
+                <!-- Step 1 -->
+                <div class="process-step">
+                    <div class="step-number">
+                        <i class="fas fa-search step-icon"></i>
+                    </div>
+                    <h3>Discovery & Audit</h3>
+                    <p>
+                        Deep-dive analysis of your current systems, stakeholder interviews, and comprehensive technical audit to identify opportunities and risks.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="process-step">
+                    <div class="step-number">
+                        <i class="fas fa-cogs step-icon"></i>
+                    </div>
+                    <h3>Agile Development</h3>
+                    <p>
+                        Iterative sprints with regular demos, continuous integration, and real-time collaboration ensuring your vision comes to life exactly as intended.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="process-step">
+                    <div class="step-number">
+                        <i class="fas fa-rocket step-icon"></i>
+                    </div>
+                    <h3>Deploy & Train</h3>
+                    <p>
+                        Seamless production deployment, comprehensive documentation, and hands-on training to ensure your team is fully empowered.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Consultation CTA Section -->
+    <section class="cta-section" id="consultation">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-content">
+                    <h2>Ready to Transform Your Operations?</h2>
+                    <p>
+                        Schedule a consultation with our lead engineers to discuss your unique challenges 
+                        and explore how we can architect a solution tailored to your organization's needs.
+                    </p>
+                    <div class="cta-features">
+                        <div class="cta-feature">
+                            <i class="fas fa-check"></i>
+                            <span>No-obligation consultation</span>
+                        </div>
+                        <div class="cta-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Technical scope review</span>
+                        </div>
+                        <div class="cta-feature">
+                            <i class="fas fa-check"></i>
+                            <span>Custom proposal</span>
+                        </div>
+                    </div>
+                    <a href="mailto:enterprise@cloudspace.co.ke" class="btn-engineer">
+                        <i class="fas fa-calendar-check"></i> Speak to a Lead Engineer
+                    </a>
+                </div>
+                <div class="cta-image">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=600&h=400&fit=crop" alt="African engineers in a boardroom meeting discussing technical solutions">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Container -->
+    <footer id="footer-slot" class="footer"></footer>
+
+    <!-- Loader Script -->
+    <script src="../js/loader.js"></script>
+    
+    <!-- Custom loader for services subdirectory -->
+    <script>
+        // Override the default loader paths for subdirectory
+        document.addEventListener('DOMContentLoaded', function() {
+            // Load header and footer from parent directory
+            fetch('../header.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('header-slot').innerHTML = html;
+                    // Re-initialize mobile menu toggle if needed
+                    const mobileToggle = document.querySelector('.mobile-toggle');
+                    const navLinks = document.querySelector('.nav-links');
+                    if (mobileToggle && navLinks) {
+                        mobileToggle.addEventListener('click', () => {
+                            navLinks.classList.toggle('active');
+                        });
+                    }
+                })
+                .catch(err => console.error('Error loading header:', err));
+
+            fetch('../footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('footer-slot').innerHTML = html;
+                })
+                .catch(err => console.error('Error loading footer:', err));
+        });
+    </script>
+</body>
+</html>

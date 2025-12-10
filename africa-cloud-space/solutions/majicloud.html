@@ -1,0 +1,515 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MajiCloud - Water Billing & Customer Management | Africa Cloud Space</title>
+    <meta name="description"
+        content="Cloud-based water billing and customer management system for water utilities and SACCOs. Improve revenue collection with M-Pesa integration and SMS alerts.">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* MajiCloud - Aqua & Deep Ocean Blue Theme */
+        .maji-hero {
+            background: linear-gradient(135deg, #023e8a 0%, #0077b6 50%, #00b4d8 100%);
+            color: #fff;
+            padding: 100px 0 140px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .maji-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .maji-hero .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .maji-badge {
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+
+        .maji-hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 25px;
+        }
+
+        .maji-hero h1 span {
+            background: linear-gradient(90deg, #e0f7fa 0%, #80deea 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .maji-hero p {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .maji-btn {
+            background: #fff;
+            color: #0077b6;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .maji-btn:hover {
+            background: #e0f7fa;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .maji-btn-outline {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            color: #fff;
+            margin-left: 15px;
+        }
+
+        .maji-btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+        }
+
+        .maji-hero-img {
+            border-radius: 20px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: #fff;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.12);
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        /* Zig-Zag Features */
+        .features-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #f8fafc 0%, #e0f7fa 100%);
+        }
+
+        .feature-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+
+        .feature-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-row.reverse {
+            direction: rtl;
+        }
+
+        .feature-row.reverse>* {
+            direction: ltr;
+        }
+
+        .feature-img {
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 119, 182, 0.15);
+            width: 100%;
+        }
+
+        .feature-content {
+            padding: 20px 0;
+        }
+
+        .feature-tag {
+            color: #0077b6;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-tag i {
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 119, 182, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #0077b6;
+        }
+
+        .feature-content h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #023e8a;
+            margin-bottom: 20px;
+        }
+
+        .feature-content p {
+            font-size: 1.05rem;
+            color: #64748b;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            color: #475569;
+        }
+
+        .feature-list li i {
+            color: #00b4d8;
+            margin-top: 4px;
+        }
+
+        /* Final CTA */
+        .cta-section {
+            background: linear-gradient(135deg, #023e8a 0%, #0077b6 100%);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(0, 180, 216, 0.2) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .cta-section h2 span {
+            color: #80deea;
+        }
+
+        .cta-section p {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            background: #fff;
+            color: #0077b6;
+            padding: 18px 50px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: #e0f7fa;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .maji-hero .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .maji-hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .maji-hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .maji-hero-img {
+                display: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
+                padding: 25px 0;
+            }
+
+            .stat-item:last-child {
+                border-bottom: none;
+            }
+
+            .feature-row {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .feature-row.reverse {
+                direction: ltr;
+            }
+
+            .feature-content h3 {
+                font-size: 1.6rem;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Dynamic Header -->
+    <header id="header-slot" class="main-header"></header>
+
+    <!-- Hero Section -->
+    <section class="maji-hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <span class="maji-badge">💧 Water Billing Platform</span>
+                    <h1>Protect Your <span>Revenue</span> with Smart Water Billing</h1>
+                    <p>A robust cloud-based water billing and customer management system designed for water utilities
+                        and SACCOs — improving revenue collection and customer service.</p>
+                    <div class="hero-btns">
+                        <a href="#demo" class="maji-btn">
+                            <i class="fas fa-rocket"></i> Get Started
+                        </a>
+                        <a href="#features" class="maji-btn maji-btn-outline">
+                            <i class="fas fa-play-circle"></i> See How It Works
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-img-box">
+                    <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop"
+                        alt="Water utility management dashboard" class="maji-hero-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="container">
+        <div class="stats-bar">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">5,000+</div>
+                    <div class="stat-label">Meters Managed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">98%</div>
+                    <div class="stat-label">Collection Rate</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">M-Pesa</div>
+                    <div class="stat-label">Fully Integrated</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zig-Zag Features -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <!-- Feature 1: Meter Management -->
+            <div class="feature-row">
+                <div class="feature-img-box">
+                    <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=700&h=500&fit=crop"
+                        alt="Water meter reading in the field" class="feature-img">
+                </div>
+                <div class="feature-content">
+                    <div class="feature-tag">
+                        <i class="fas fa-tachometer-alt"></i>
+                        Meter Management
+                    </div>
+                    <h3>Digital Meter Reading with GPS Tracking</h3>
+                    <p>Replace paper-based reading with our mobile app. Field officers capture readings with GPS
+                        coordinates and photos — reducing errors and disputes.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Mobile app for field meter readers</li>
+                        <li><i class="fas fa-check-circle"></i> GPS location stamping on each reading</li>
+                        <li><i class="fas fa-check-circle"></i> Photo evidence for dispute resolution</li>
+                        <li><i class="fas fa-check-circle"></i> Offline mode for remote areas</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Feature 2: M-Pesa Integration (Reversed) -->
+            <div class="feature-row reverse">
+                <div class="feature-img-box">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&h=500&fit=crop"
+                        alt="Mobile payment transaction" class="feature-img">
+                </div>
+                <div class="feature-content">
+                    <div class="feature-tag">
+                        <i class="fas fa-mobile-alt"></i>
+                        M-Pesa Integration
+                    </div>
+                    <h3>Cashless Payments, Zero Queues</h3>
+                    <p>Customers pay water bills directly via M-Pesa using their account number. Payments are
+                        automatically reconciled with their accounts in real-time.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Pay-bill and Till number support</li>
+                        <li><i class="fas fa-check-circle"></i> Automatic account reconciliation</li>
+                        <li><i class="fas fa-check-circle"></i> SMS payment confirmation to customer</li>
+                        <li><i class="fas fa-check-circle"></i> Reduces cash handling risks</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Feature 3: SMS Billing Alerts -->
+            <div class="feature-row">
+                <div class="feature-img-box">
+                    <img src="https://images.unsplash.com/photo-1611532736597-de2d4265fba3?w=700&h=500&fit=crop"
+                        alt="SMS notification on phone" class="feature-img">
+                </div>
+                <div class="feature-content">
+                    <div class="feature-tag">
+                        <i class="fas fa-sms"></i>
+                        SMS Billing Alerts
+                    </div>
+                    <h3>Automated Billing & Payment Reminders</h3>
+                    <p>Send monthly bills via SMS and automate payment reminders before disconnection. Improve
+                        collection rates and customer satisfaction.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Automatic monthly bill SMS delivery</li>
+                        <li><i class="fas fa-check-circle"></i> Customizable payment reminder schedules</li>
+                        <li><i class="fas fa-check-circle"></i> Disconnection warning notifications</li>
+                        <li><i class="fas fa-check-circle"></i> Balance inquiry via SMS</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="demo" class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to Boost Your <span>Revenue Collection</span>?</h2>
+                <p>Join leading water utilities across Kenya using MajiCloud to eliminate revenue leakage and modernize
+                    customer service.</p>
+                <a href="#" class="cta-btn">
+                    <i class="fas fa-calendar-check"></i> Book a Free Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Footer -->
+    <footer id="footer-slot" class="footer"></footer>
+
+    <!-- Global Loader -->
+    <script src="../js/loader.js"></script>
+</body>
+
+</html>

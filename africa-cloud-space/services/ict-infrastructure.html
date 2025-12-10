@@ -1,0 +1,1087 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Africa Cloud Space ICT Infrastructure - Cloud Migration, Hardware Procurement, Network Design. Build the reliable foundation that powers your business growth.">
+    <meta name="keywords"
+        content="ICT infrastructure, cloud migration, AWS, Azure, network design, structured cabling, server installation, Kenya, Africa">
+    <title>ICT Infrastructure | Africa Cloud Space</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Global Stylesheet -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Page-Specific Styles -->
+    <style>
+        /* =========================================
+           ICT INFRASTRUCTURE PAGE STYLES
+           "The Foundation" - Solid & Dependable
+           ========================================= */
+
+        :root {
+            --infra-primary: #0f172a;
+            --infra-accent: #3b82f6;
+            --infra-secondary: #1e40af;
+            --infra-steel: #475569;
+            --infra-light: #f1f5f9;
+        }
+
+        /* Infrastructure Hero */
+        .infra-hero {
+            background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #0f172a 100%);
+            color: var(--white);
+            padding: 120px 0 160px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .infra-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 80% 50%, rgba(59, 130, 246, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 20% 80%, rgba(59, 130, 246, 0.05) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .infra-hero::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                linear-gradient(rgba(59, 130, 246, 0.03) 1px, transparent 1px),
+                linear-gradient(90deg, rgba(59, 130, 246, 0.03) 1px, transparent 1px);
+            background-size: 60px 60px;
+            pointer-events: none;
+        }
+
+        .infra-hero .hero-grid {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-badge {
+            background: rgba(59, 130, 246, 0.15);
+            color: #60a5fa;
+            border: 1px solid rgba(59, 130, 246, 0.4);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .infra-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 25px;
+            background: linear-gradient(135deg, #ffffff 0%, #cbd5e1 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .infra-hero h1 span {
+            background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+        }
+
+        .hero-subhead {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            line-height: 1.8;
+            margin-bottom: 40px;
+            max-width: 550px;
+        }
+
+        .hero-btns {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .btn-infra {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            color: var(--white);
+            padding: 16px 35px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-infra:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(59, 130, 246, 0.4);
+        }
+
+        .btn-infra-outline {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            color: #fff;
+        }
+
+        .btn-infra-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+            box-shadow: none;
+        }
+
+        .hero-img-box {
+            position: relative;
+        }
+
+        .hero-img-box img {
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.4);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            width: 100%;
+        }
+
+        .hero-img-box::before {
+            content: '';
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            border-radius: 20px;
+            z-index: -1;
+            opacity: 0.5;
+        }
+
+        /* Success Indicator Strip */
+        .uptime-strip {
+            background: linear-gradient(90deg, #1e40af 0%, #3b82f6 50%, #1e40af 100%);
+            padding: 40px 0;
+            text-align: center;
+            position: relative;
+            margin-top: -60px;
+            z-index: 10;
+        }
+
+        .uptime-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 40px;
+        }
+
+        .uptime-badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 15px 40px;
+            border-radius: 60px;
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .uptime-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 3rem;
+            font-weight: 800;
+            color: #fff;
+            line-height: 1;
+        }
+
+        .uptime-text {
+            text-align: left;
+        }
+
+        .uptime-text h4 {
+            color: #fff;
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .uptime-text p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 0.85rem;
+        }
+
+        /* Capabilities Tabs Section */
+        .capabilities-section {
+            padding: 120px 0;
+            background: var(--bg-offwhite);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            color: #3b82f6;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: #0f172a;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .section-desc {
+            color: var(--text-grey);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Accordion Tabs */
+        .capabilities-wrapper {
+            display: grid;
+            grid-template-columns: 1fr 1.2fr;
+            gap: 60px;
+            align-items: start;
+        }
+
+        .capability-tabs {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .capability-tab {
+            background: var(--white);
+            border: 2px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 25px 30px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .capability-tab::before {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            bottom: 0;
+            width: 4px;
+            background: linear-gradient(180deg, #3b82f6, #1d4ed8);
+            transform: scaleY(0);
+            transition: transform 0.3s ease;
+        }
+
+        .capability-tab.active {
+            border-color: #3b82f6;
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.15);
+        }
+
+        .capability-tab.active::before {
+            transform: scaleY(1);
+        }
+
+        .capability-tab:hover {
+            border-color: #93c5fd;
+        }
+
+        .tab-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .tab-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, rgba(59, 130, 246, 0.1), rgba(30, 64, 175, 0.1));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #3b82f6;
+        }
+
+        .tab-title h3 {
+            font-size: 1.2rem;
+            color: #0f172a;
+            font-weight: 700;
+            margin-bottom: 3px;
+        }
+
+        .tab-title p {
+            font-size: 0.85rem;
+            color: var(--text-grey);
+        }
+
+        .tab-chevron {
+            margin-left: auto;
+            color: #94a3b8;
+            transition: transform 0.3s ease;
+        }
+
+        .capability-tab.active .tab-chevron {
+            transform: rotate(180deg);
+            color: #3b82f6;
+        }
+
+        .tab-content {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease;
+        }
+
+        .capability-tab.active .tab-content {
+            max-height: 300px;
+            margin-top: 20px;
+        }
+
+        .tab-content-inner {
+            padding-top: 15px;
+            border-top: 1px solid #f1f5f9;
+        }
+
+        .tab-content-inner ul {
+            list-style: none;
+        }
+
+        .tab-content-inner li {
+            display: flex;
+            align-items: flex-start;
+            gap: 10px;
+            padding: 8px 0;
+            color: #475569;
+            font-size: 0.95rem;
+        }
+
+        .tab-content-inner li i {
+            color: #10b981;
+            margin-top: 3px;
+        }
+
+        /* Capability Visual */
+        .capability-visual {
+            position: sticky;
+            top: 100px;
+        }
+
+        .capability-visual img {
+            width: 100%;
+            border-radius: 20px;
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+        }
+
+        .visual-overlay {
+            background: var(--white);
+            border-radius: 16px;
+            padding: 25px;
+            margin-top: -50px;
+            margin-left: 30px;
+            margin-right: 30px;
+            position: relative;
+            z-index: 2;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .visual-overlay h4 {
+            color: #0f172a;
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+        }
+
+        .tech-icons {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+
+        .tech-icon {
+            width: 45px;
+            height: 45px;
+            background: #f1f5f9;
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 20px;
+            color: #475569;
+            transition: all 0.3s ease;
+        }
+
+        .tech-icon:hover {
+            background: #3b82f6;
+            color: #fff;
+        }
+
+        /* Hybrid Advantage Section */
+        .hybrid-section {
+            padding: 120px 0;
+            background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+            color: var(--white);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hybrid-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image:
+                radial-gradient(rgba(59, 130, 246, 0.1) 2px, transparent 2px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        .hybrid-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hybrid-content h2 {
+            font-size: 2.5rem;
+            font-weight: 700;
+            margin-bottom: 25px;
+            line-height: 1.2;
+        }
+
+        .hybrid-content h2 span {
+            background: linear-gradient(135deg, #3b82f6 0%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hybrid-content p {
+            color: #94a3b8;
+            font-size: 1.1rem;
+            line-height: 1.8;
+            margin-bottom: 30px;
+        }
+
+        .hybrid-points {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .hybrid-point {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            padding: 25px;
+            transition: all 0.3s ease;
+        }
+
+        .hybrid-point:hover {
+            background: rgba(59, 130, 246, 0.1);
+            border-color: rgba(59, 130, 246, 0.3);
+        }
+
+        .hybrid-point i {
+            font-size: 28px;
+            color: #3b82f6;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .hybrid-point h4 {
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+
+        .hybrid-point p {
+            font-size: 0.9rem;
+            color: #94a3b8;
+            margin-bottom: 0;
+        }
+
+        .hybrid-visual {
+            position: relative;
+        }
+
+        .hybrid-diagram {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 24px;
+            padding: 40px;
+            text-align: center;
+        }
+
+        .diagram-top,
+        .diagram-bottom {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        .diagram-node {
+            background: rgba(59, 130, 246, 0.2);
+            border: 2px solid #3b82f6;
+            border-radius: 16px;
+            padding: 20px 30px;
+            text-align: center;
+            min-width: 140px;
+        }
+
+        .diagram-node i {
+            font-size: 28px;
+            color: #60a5fa;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .diagram-node span {
+            font-size: 0.9rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        .diagram-connector {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 60px;
+        }
+
+        .diagram-connector i {
+            font-size: 24px;
+            color: #3b82f6;
+            animation: pulse-arrow 1.5s infinite;
+        }
+
+        @keyframes pulse-arrow {
+
+            0%,
+            100% {
+                opacity: 0.5;
+                transform: translateY(0);
+            }
+
+            50% {
+                opacity: 1;
+                transform: translateY(5px);
+            }
+        }
+
+        .diagram-center {
+            background: linear-gradient(135deg, #3b82f6, #1d4ed8);
+            border-radius: 20px;
+            padding: 25px 40px;
+            margin: 0 auto;
+            display: inline-block;
+        }
+
+        .diagram-center i {
+            font-size: 32px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .diagram-center span {
+            font-size: 1rem;
+            font-weight: 700;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: var(--bg-offwhite);
+        }
+
+        .cta-card {
+            background: linear-gradient(135deg, #1e40af 0%, #3b82f6 100%);
+            border-radius: 24px;
+            padding: 80px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -30%;
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(255, 255, 255, 0.1), transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta-card::after {
+            content: '';
+            position: absolute;
+            bottom: -50%;
+            left: -30%;
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(0, 0, 0, 0.1), transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content h2 {
+            font-size: 2.8rem;
+            color: #fff;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .cta-content p {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            background: #fff;
+            color: #1e40af;
+            padding: 18px 50px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.2);
+            background: #f1f5f9;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .infra-hero .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-subhead {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .hero-btns {
+                justify-content: center;
+            }
+
+            .hero-img-box {
+                display: none;
+            }
+
+            .uptime-content {
+                flex-direction: column;
+            }
+
+            .capabilities-wrapper {
+                grid-template-columns: 1fr;
+            }
+
+            .capability-visual {
+                position: static;
+                display: none;
+            }
+
+            .hybrid-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .hybrid-visual {
+                order: -1;
+            }
+
+            .hybrid-points {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .infra-hero {
+                padding: 80px 0 120px 0;
+            }
+
+            .infra-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-subhead {
+                font-size: 1rem;
+            }
+
+            .uptime-number {
+                font-size: 2.2rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .hybrid-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .cta-card {
+                padding: 60px 30px;
+            }
+
+            .cta-content h2 {
+                font-size: 2rem;
+            }
+
+            .diagram-top,
+            .diagram-bottom {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Container -->
+    <header id="header-slot" class="main-header"></header>
+
+    <!-- Hero Section -->
+    <section class="infra-hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <span class="hero-badge">
+                        <i class="fas fa-server"></i> ICT Infrastructure
+                    </span>
+                    <h1>A Network That <span>Never Sleeps</span></h1>
+                    <p class="hero-subhead">
+                        From server installation to cloud migration, we build the rock-solid infrastructure that powers
+                        your growth. Reliable. Scalable. Future-ready.
+                    </p>
+                    <div class="hero-btns">
+                        <a href="#upgrade" class="btn-infra">
+                            <i class="fas fa-arrow-up"></i> Upgrade Your Infrastructure
+                        </a>
+                        <a href="#capabilities" class="btn-infra btn-infra-outline">
+                            <i class="fas fa-play-circle"></i> Explore Capabilities
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-img-box">
+                    <img src="https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=700&h=500&fit=crop"
+                        alt="Modern server room with structured cabling and equipment racks">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Success Indicator -->
+    <section class="uptime-strip">
+        <div class="container">
+            <div class="uptime-content">
+                <div class="uptime-badge">
+                    <div class="uptime-number">99.9%</div>
+                    <div class="uptime-text">
+                        <h4>Uptime Guarantee</h4>
+                        <p>Industry-leading reliability for mission-critical systems</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Capabilities Section -->
+    <section id="capabilities" class="capabilities-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Capabilities</span>
+                <h2 class="section-title">End-to-End Infrastructure Solutions</h2>
+                <p class="section-desc">
+                    From cloud to campus, we design, deploy, and manage the technology backbone your business needs.
+                </p>
+            </div>
+
+            <div class="capabilities-wrapper">
+                <!-- Accordion Tabs -->
+                <div class="capability-tabs">
+                    <!-- Tab 1: Cloud Migration -->
+                    <div class="capability-tab active" data-tab="cloud">
+                        <div class="tab-header">
+                            <div class="tab-icon">
+                                <i class="fas fa-cloud-upload-alt"></i>
+                            </div>
+                            <div class="tab-title">
+                                <h3>Cloud Migration</h3>
+                                <p>Move from on-premise to Azure/AWS</p>
+                            </div>
+                            <i class="fas fa-chevron-down tab-chevron"></i>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-content-inner">
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Cloud readiness assessment & strategy</li>
+                                    <li><i class="fas fa-check-circle"></i> AWS & Microsoft Azure deployment</li>
+                                    <li><i class="fas fa-check-circle"></i> Data migration with zero downtime</li>
+                                    <li><i class="fas fa-check-circle"></i> Hybrid cloud architecture design</li>
+                                    <li><i class="fas fa-check-circle"></i> Cost optimization & resource scaling</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 2: Hardware Procurement -->
+                    <div class="capability-tab" data-tab="hardware">
+                        <div class="tab-header">
+                            <div class="tab-icon">
+                                <i class="fas fa-laptop"></i>
+                            </div>
+                            <div class="tab-title">
+                                <h3>Hardware Procurement</h3>
+                                <p>Enterprise laptops, servers & equipment</p>
+                            </div>
+                            <i class="fas fa-chevron-down tab-chevron"></i>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-content-inner">
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Authorized Redington partnership</li>
+                                    <li><i class="fas fa-check-circle"></i> Dell, HP, Lenovo enterprise hardware</li>
+                                    <li><i class="fas fa-check-circle"></i> Server rack installation & configuration
+                                    </li>
+                                    <li><i class="fas fa-check-circle"></i> UPS & power backup systems</li>
+                                    <li><i class="fas fa-check-circle"></i> Warranty management & support</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Tab 3: Network Design -->
+                    <div class="capability-tab" data-tab="network">
+                        <div class="tab-header">
+                            <div class="tab-icon">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <div class="tab-title">
+                                <h3>Network Design</h3>
+                                <p>Structured cabling & Wi-Fi for campuses</p>
+                            </div>
+                            <i class="fas fa-chevron-down tab-chevron"></i>
+                        </div>
+                        <div class="tab-content">
+                            <div class="tab-content-inner">
+                                <ul>
+                                    <li><i class="fas fa-check-circle"></i> Campus-wide structured cabling (Cat6/Cat6A)
+                                    </li>
+                                    <li><i class="fas fa-check-circle"></i> Enterprise Wi-Fi network deployment</li>
+                                    <li><i class="fas fa-check-circle"></i> Firewall & network security setup</li>
+                                    <li><i class="fas fa-check-circle"></i> VPN & remote access configuration</li>
+                                    <li><i class="fas fa-check-circle"></i> Network monitoring & management</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Visual Panel -->
+                <div class="capability-visual">
+                    <img src="https://images.unsplash.com/photo-1544197150-b99a580bb7a8?w=600&h=450&fit=crop"
+                        alt="Cloud infrastructure and network diagram illustration">
+                    <div class="visual-overlay">
+                        <h4>Technology Partners</h4>
+                        <div class="tech-icons">
+                            <div class="tech-icon" title="Amazon Web Services">
+                                <i class="fab fa-aws"></i>
+                            </div>
+                            <div class="tech-icon" title="Microsoft Azure">
+                                <i class="fab fa-microsoft"></i>
+                            </div>
+                            <div class="tech-icon" title="Cisco">
+                                <i class="fas fa-network-wired"></i>
+                            </div>
+                            <div class="tech-icon" title="Dell">
+                                <i class="fas fa-server"></i>
+                            </div>
+                            <div class="tech-icon" title="VMware">
+                                <i class="fas fa-cubes"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Hybrid Advantage Section -->
+    <section class="hybrid-section">
+        <div class="container">
+            <div class="hybrid-grid">
+                <div class="hybrid-content">
+                    <h2>The <span>Hybrid</span> Advantage</h2>
+                    <p>
+                        Not everything belongs in the cloud — and not everything should stay on-premise.
+                        Our hybrid approach gives you the best of both worlds: keep sensitive data local
+                        while putting scalable applications on the cloud.
+                    </p>
+                    <div class="hybrid-points">
+                        <div class="hybrid-point">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Data Sovereignty</h4>
+                            <p>Keep critical data in your control, on your premises.</p>
+                        </div>
+                        <div class="hybrid-point">
+                            <i class="fas fa-expand-arrows-alt"></i>
+                            <h4>Infinite Scale</h4>
+                            <p>Burst to the cloud when demand spikes.</p>
+                        </div>
+                        <div class="hybrid-point">
+                            <i class="fas fa-coins"></i>
+                            <h4>Cost Efficiency</h4>
+                            <p>Pay only for cloud resources you actually use.</p>
+                        </div>
+                        <div class="hybrid-point">
+                            <i class="fas fa-sync-alt"></i>
+                            <h4>Business Continuity</h4>
+                            <p>Automatic failover between local and cloud.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hybrid-visual">
+                    <div class="hybrid-diagram">
+                        <div class="diagram-top">
+                            <div class="diagram-node">
+                                <i class="fas fa-cloud"></i>
+                                <span>Azure / AWS</span>
+                            </div>
+                            <div class="diagram-node">
+                                <i class="fas fa-globe"></i>
+                                <span>Web Apps</span>
+                            </div>
+                        </div>
+                        <div class="diagram-connector">
+                            <i class="fas fa-exchange-alt fa-rotate-90"></i>
+                        </div>
+                        <div class="diagram-center">
+                            <i class="fas fa-random"></i>
+                            <span>Hybrid Gateway</span>
+                        </div>
+                        <div class="diagram-connector">
+                            <i class="fas fa-exchange-alt fa-rotate-90"></i>
+                        </div>
+                        <div class="diagram-bottom">
+                            <div class="diagram-node">
+                                <i class="fas fa-database"></i>
+                                <span>Local Data</span>
+                            </div>
+                            <div class="diagram-node">
+                                <i class="fas fa-server"></i>
+                                <span>On-Premise</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section id="upgrade" class="cta-section">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-content">
+                    <h2>Ready to Build Your Foundation?</h2>
+                    <p>
+                        Let our infrastructure specialists assess your current setup and design a
+                        reliable, scalable solution tailored to your business needs.
+                    </p>
+                    <a href="#" class="cta-btn">
+                        <i class="fas fa-arrow-up"></i> Upgrade Your Infrastructure
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Container -->
+    <footer id="footer-slot" class="footer"></footer>
+
+    <!-- Loader Script -->
+    <script src="../js/loader.js"></script>
+
+    <!-- Custom loader for services subdirectory -->
+    <script>
+        // Override the default loader paths for subdirectory
+        document.addEventListener('DOMContentLoaded', function () {
+            // Load header and footer from parent directory
+            loadComponent('header-slot', '../header.html');
+            loadComponent('footer-slot', '../footer.html');
+        });
+
+        // Accordion Tab Functionality
+        document.querySelectorAll('.capability-tab').forEach(tab => {
+            tab.addEventListener('click', function () {
+                // Remove active from all tabs
+                document.querySelectorAll('.capability-tab').forEach(t => t.classList.remove('active'));
+                // Add active to clicked tab
+                this.classList.add('active');
+            });
+        });
+    </script>
+</body>
+
+</html>

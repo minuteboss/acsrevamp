@@ -1,0 +1,653 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Join Africa Cloud Space - Exciting career opportunities in software development, sales, and technology across Kenya and Africa.">
+    <meta name="keywords"
+        content="jobs, careers, software developer, Kenya jobs, tech careers, Africa Cloud Space careers">
+    <title>Careers | Africa Cloud Space</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Global Stylesheet -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Page-Specific Styles -->
+    <style>
+        /* =========================================
+           CAREERS PAGE - WARM HUMAN-CENTRIC DESIGN
+           ========================================= */
+
+        /* Careers Hero */
+        .careers-hero {
+            background: linear-gradient(135deg, #021a2e 0%, #0a3d5c 50%, #0f5f7a 100%);
+            color: #fff;
+            padding: 120px 0 160px;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .careers-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 20% 80%, rgba(16, 185, 129, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 20%, rgba(0, 180, 216, 0.1) 0%, transparent 40%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .hero-emoji {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            animation: wave 2s ease-in-out infinite;
+        }
+
+        @keyframes wave {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(15deg);
+            }
+
+            75% {
+                transform: rotate(-15deg);
+            }
+        }
+
+        .careers-hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 25px;
+        }
+
+        .careers-hero h1 span {
+            background: linear-gradient(135deg, #10b981 0%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-desc {
+            font-size: 1.25rem;
+            color: rgba(255, 255, 255, 0.75);
+            line-height: 1.7;
+            margin-bottom: 40px;
+        }
+
+        .hero-stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 50px;
+        }
+
+        .hero-stat {
+            text-align: center;
+        }
+
+        .hero-stat-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #10b981;
+        }
+
+        .hero-stat-label {
+            font-size: 0.9rem;
+            color: rgba(255, 255, 255, 0.6);
+            margin-top: 5px;
+        }
+
+        /* Why Join Section */
+        .why-section {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .section-tag {
+            color: #10b981;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.5rem;
+            color: #021a2e;
+            font-weight: 700;
+        }
+
+        .perks-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 30px;
+        }
+
+        .perk-card {
+            background: #fff;
+            border-radius: 20px;
+            padding: 35px 25px;
+            text-align: center;
+            border: 1px solid #e2e8f0;
+            transition: all 0.3s ease;
+        }
+
+        .perk-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+            border-color: #10b981;
+        }
+
+        .perk-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .perk-card h3 {
+            font-size: 1.15rem;
+            color: #021a2e;
+            margin-bottom: 10px;
+        }
+
+        .perk-card p {
+            color: #64748b;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+
+        /* Open Positions */
+        .positions-section {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .positions-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .position-card {
+            background: #f8fafc;
+            border: 1px solid #e2e8f0;
+            border-radius: 16px;
+            padding: 30px 35px;
+            margin-bottom: 20px;
+            display: grid;
+            grid-template-columns: 1fr auto;
+            gap: 30px;
+            align-items: center;
+            transition: all 0.3s ease;
+        }
+
+        .position-card:hover {
+            background: #fff;
+            border-color: #0077b6;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transform: translateX(10px);
+        }
+
+        .position-info h3 {
+            font-size: 1.3rem;
+            color: #021a2e;
+            margin-bottom: 10px;
+        }
+
+        .position-meta {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .meta-item {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 0.9rem;
+            color: #64748b;
+        }
+
+        .meta-item i {
+            color: #0077b6;
+        }
+
+        .position-tags {
+            display: flex;
+            gap: 10px;
+            margin-top: 15px;
+        }
+
+        .position-tag {
+            background: #e0f2fe;
+            color: #0369a1;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            font-weight: 600;
+        }
+
+        .position-tag.urgent {
+            background: #fef3c7;
+            color: #b45309;
+        }
+
+        .btn-apply {
+            background: linear-gradient(135deg, #0077b6 0%, #0891b2 100%);
+            color: #fff;
+            padding: 14px 28px;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: all 0.3s ease;
+            white-space: nowrap;
+        }
+
+        .btn-apply:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 119, 182, 0.3);
+        }
+
+        /* No positions message */
+        .no-positions {
+            text-align: center;
+            padding: 60px;
+            background: #f8fafc;
+            border-radius: 20px;
+            border: 2px dashed #e2e8f0;
+        }
+
+        .no-positions-icon {
+            font-size: 4rem;
+            margin-bottom: 20px;
+        }
+
+        .no-positions h3 {
+            font-size: 1.5rem;
+            color: #021a2e;
+            margin-bottom: 15px;
+        }
+
+        .no-positions p {
+            color: #64748b;
+            margin-bottom: 25px;
+        }
+
+        /* CTA Section */
+        .careers-cta {
+            padding: 100px 0;
+            background: linear-gradient(135deg, #021a2e 0%, #0a3d5c 100%);
+            text-align: center;
+            color: #fff;
+        }
+
+        .cta-icon {
+            font-size: 3rem;
+            margin-bottom: 25px;
+        }
+
+        .careers-cta h2 {
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+        }
+
+        .careers-cta p {
+            color: rgba(255, 255, 255, 0.7);
+            font-size: 1.15rem;
+            max-width: 600px;
+            margin: 0 auto 35px;
+        }
+
+        .btn-cta {
+            background: #10b981;
+            color: #fff;
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            transition: all 0.3s ease;
+            box-shadow: 0 15px 40px rgba(16, 185, 129, 0.3);
+        }
+
+        .btn-cta:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 20px 50px rgba(16, 185, 129, 0.4);
+        }
+
+        /* Culture Gallery */
+        .culture-section {
+            padding: 80px 0;
+            background: #f1f5f9;
+        }
+
+        .culture-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 20px;
+        }
+
+        .culture-img {
+            border-radius: 16px;
+            overflow: hidden;
+            height: 200px;
+        }
+
+        .culture-img img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .culture-img:hover img {
+            transform: scale(1.1);
+        }
+
+        /* Responsive */
+        @media (max-width: 1024px) {
+            .perks-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .culture-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .hero-stats {
+                gap: 40px;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .careers-hero {
+                padding: 80px 0 120px;
+            }
+
+            .careers-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .perks-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .position-card {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .position-meta {
+                justify-content: center;
+            }
+
+            .position-tags {
+                justify-content: center;
+            }
+
+            .culture-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+
+            .hero-stats {
+                flex-direction: column;
+                gap: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Container -->
+    <header id="header-slot" class="main-header"></header>
+
+    <!-- Careers Hero -->
+    <section class="careers-hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-emoji">👋</div>
+                <h1>Build the Future of <span>Africa</span> With Us</h1>
+                <p class="hero-desc">
+                    Join a passionate team of engineers, designers, and innovators
+                    solving real problems for millions of Africans every day.
+                </p>
+
+                <div class="hero-stats">
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">25+</div>
+                        <div class="hero-stat-label">Team Members</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">4</div>
+                        <div class="hero-stat-label">Countries</div>
+                    </div>
+                    <div class="hero-stat">
+                        <div class="hero-stat-number">100%</div>
+                        <div class="hero-stat-label">Remote-Friendly</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Join -->
+    <section class="why-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Why Join Us</span>
+                <h2 class="section-title">More Than Just a Job</h2>
+            </div>
+
+            <div class="perks-grid">
+                <div class="perk-card">
+                    <div class="perk-icon">🌍</div>
+                    <h3>Remote-First</h3>
+                    <p>Work from anywhere in Africa. We trust you to deliver great work on your terms.</p>
+                </div>
+                <div class="perk-card">
+                    <div class="perk-icon">📈</div>
+                    <h3>Growth Path</h3>
+                    <p>Clear career progression with mentorship, training budgets, and leadership opportunities.</p>
+                </div>
+                <div class="perk-card">
+                    <div class="perk-icon">💰</div>
+                    <h3>Competitive Pay</h3>
+                    <p>Above-market salaries, performance bonuses, and health insurance coverage.</p>
+                </div>
+                <div class="perk-card">
+                    <div class="perk-icon">🛠️</div>
+                    <h3>Latest Tech</h3>
+                    <p>Work with modern tools: React, Node.js, Python, Cloud infrastructure, and AI.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Culture Gallery -->
+    <section class="culture-section">
+        <div class="container">
+            <div class="culture-grid">
+                <div class="culture-img">
+                    <img src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=400&h=300&fit=crop"
+                        alt="Team collaboration">
+                </div>
+                <div class="culture-img">
+                    <img src="https://images.unsplash.com/photo-1517048676732-d65bc937f952?w=400&h=300&fit=crop"
+                        alt="Team meeting">
+                </div>
+                <div class="culture-img">
+                    <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=400&h=300&fit=crop"
+                        alt="Office work">
+                </div>
+                <div class="culture-img">
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=400&h=300&fit=crop"
+                        alt="Team celebration">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Open Positions -->
+    <section class="positions-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Open Positions</span>
+                <h2 class="section-title">Join Our Team</h2>
+            </div>
+
+            <div class="positions-list">
+
+                <!-- Position 1 -->
+                <div class="position-card">
+                    <div class="position-info">
+                        <h3>Senior React Developer</h3>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Remote (Kenya)</span>
+                            <span class="meta-item"><i class="fas fa-clock"></i> Full-Time</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Engineering</span>
+                        </div>
+                        <div class="position-tags">
+                            <span class="position-tag">React</span>
+                            <span class="position-tag">TypeScript</span>
+                            <span class="position-tag">Node.js</span>
+                        </div>
+                    </div>
+                    <a href="mailto:careers@cloudspace.co.ke?subject=Application: Senior React Developer"
+                        class="btn-apply">
+                        Apply Now <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Position 2 -->
+                <div class="position-card">
+                    <div class="position-info">
+                        <h3>Sales Executive - Education Sector</h3>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</span>
+                            <span class="meta-item"><i class="fas fa-clock"></i> Full-Time</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Sales</span>
+                        </div>
+                        <div class="position-tags">
+                            <span class="position-tag">B2B Sales</span>
+                            <span class="position-tag">EdTech</span>
+                            <span class="position-tag urgent">Hiring Now</span>
+                        </div>
+                    </div>
+                    <a href="mailto:careers@cloudspace.co.ke?subject=Application: Sales Executive" class="btn-apply">
+                        Apply Now <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Position 3 -->
+                <div class="position-card">
+                    <div class="position-info">
+                        <h3>DevOps Engineer</h3>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Remote (Africa)</span>
+                            <span class="meta-item"><i class="fas fa-clock"></i> Full-Time</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Infrastructure</span>
+                        </div>
+                        <div class="position-tags">
+                            <span class="position-tag">AWS</span>
+                            <span class="position-tag">Docker</span>
+                            <span class="position-tag">Kubernetes</span>
+                        </div>
+                    </div>
+                    <a href="mailto:careers@cloudspace.co.ke?subject=Application: DevOps Engineer" class="btn-apply">
+                        Apply Now <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+                <!-- Position 4 -->
+                <div class="position-card">
+                    <div class="position-info">
+                        <h3>Customer Success Manager</h3>
+                        <div class="position-meta">
+                            <span class="meta-item"><i class="fas fa-map-marker-alt"></i> Nairobi, Kenya</span>
+                            <span class="meta-item"><i class="fas fa-clock"></i> Full-Time</span>
+                            <span class="meta-item"><i class="fas fa-briefcase"></i> Support</span>
+                        </div>
+                        <div class="position-tags">
+                            <span class="position-tag">SaaS</span>
+                            <span class="position-tag">Client Relations</span>
+                        </div>
+                    </div>
+                    <a href="mailto:careers@cloudspace.co.ke?subject=Application: Customer Success Manager"
+                        class="btn-apply">
+                        Apply Now <i class="fas fa-arrow-right"></i>
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="careers-cta">
+        <div class="container">
+            <div class="cta-icon">📧</div>
+            <h2>Don't See Your Role?</h2>
+            <p>
+                We're always looking for talented people. Send us your CV and
+                we'll reach out when a matching opportunity opens up.
+            </p>
+            <a href="mailto:careers@cloudspace.co.ke?subject=General Application" class="btn-cta">
+                <i class="fas fa-paper-plane"></i> Send Your CV
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer Container -->
+    <footer id="footer-slot" class="footer"></footer>
+
+    <!-- Loader Script -->
+    <script src="../js/loader.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            loadComponent('header-slot', '../header.html');
+            loadComponent('footer-slot', '../footer.html');
+        });
+    </script>
+</body>
+
+</html>

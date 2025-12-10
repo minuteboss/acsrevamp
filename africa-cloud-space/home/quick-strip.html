@@ -1,30 +1,228 @@
-<div class="quick-strip">
+<!-- Quick Strip: Floating Industry Navigator -->
+<style>
+    .quick-strip-v4 {
+        margin-top: -100px;
+        position: relative;
+        z-index: 20;
+        padding-bottom: 80px;
+    }
+
+    .qs-card-v4 {
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        border-radius: 24px;
+        box-shadow:
+            0 25px 60px rgba(0, 0, 0, 0.12),
+            0 0 0 1px rgba(255, 255, 255, 0.8) inset;
+        padding: 50px 40px;
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 20px;
+    }
+
+    .qs-item-v4 {
+        text-align: center;
+        padding: 30px 20px;
+        border-radius: 20px;
+        cursor: pointer;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        border: 2px solid transparent;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .qs-item-v4::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(135deg, transparent 0%, rgba(0, 180, 216, 0.05) 100%);
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+
+    .qs-item-v4:hover {
+        background: #f8fafc;
+        border-color: #e2e8f0;
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .qs-item-v4:hover::before {
+        opacity: 1;
+    }
+
+    .qs-icon-v4 {
+        width: 80px;
+        height: 80px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 32px;
+        margin: 0 auto 20px auto;
+        transition: all 0.4s ease;
+        position: relative;
+    }
+
+    .qs-item-v4:hover .qs-icon-v4 {
+        transform: scale(1.1) rotate(5deg);
+    }
+
+    /* Color variations */
+    .qs-icon-v4.schools {
+        background: linear-gradient(135deg, #e0f2fe 0%, #bae6fd 100%);
+        color: #0369a1;
+        box-shadow: 0 10px 30px rgba(3, 105, 161, 0.15);
+    }
+
+    .qs-icon-v4.water {
+        background: linear-gradient(135deg, #d1fae5 0%, #a7f3d0 100%);
+        color: #047857;
+        box-shadow: 0 10px 30px rgba(4, 120, 87, 0.15);
+    }
+
+    .qs-icon-v4.groups {
+        background: linear-gradient(135deg, #fce7f3 0%, #fbcfe8 100%);
+        color: #be185d;
+        box-shadow: 0 10px 30px rgba(190, 24, 93, 0.15);
+    }
+
+    .qs-icon-v4.retail {
+        background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+        color: #b45309;
+        box-shadow: 0 10px 30px rgba(180, 83, 9, 0.15);
+    }
+
+    .qs-label-v4 {
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 1.15rem;
+        color: #021a2e;
+        margin-bottom: 6px;
+    }
+
+    .qs-sub-v4 {
+        font-size: 0.88rem;
+        color: #64748b;
+        margin-bottom: 15px;
+    }
+
+    .qs-link-v4 {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 0.85rem;
+        font-weight: 600;
+        color: #00b4d8;
+        opacity: 0;
+        transform: translateY(10px);
+        transition: all 0.3s ease;
+    }
+
+    .qs-item-v4:hover .qs-link-v4 {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    .qs-link-v4 span {
+        transition: transform 0.2s ease;
+    }
+
+    .qs-item-v4:hover .qs-link-v4 span:last-child {
+        transform: translateX(4px);
+    }
+
+    /* Mobile */
+    @media (max-width: 1024px) {
+        .qs-card-v4 {
+            grid-template-columns: repeat(2, 1fr);
+            padding: 30px 20px;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .quick-strip-v4 {
+            margin-top: -60px;
+            padding-bottom: 40px;
+        }
+
+        .qs-card-v4 {
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            padding: 20px 15px;
+        }
+
+        .qs-item-v4 {
+            padding: 20px 10px;
+        }
+
+        .qs-icon-v4 {
+            width: 60px;
+            height: 60px;
+            font-size: 24px;
+        }
+
+        .qs-label-v4 {
+            font-size: 0.95rem;
+        }
+
+        .qs-sub-v4 {
+            font-size: 0.75rem;
+        }
+
+        .qs-link-v4 {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+</style>
+
+<div class="quick-strip-v4">
     <div class="container">
-        <div class="qs-card">
+        <div class="qs-card-v4">
 
-            <div class="qs-item">
-                <div class="qs-icon">🎓</div>
-                <div class="qs-label">Schools</div>
-                <div class="qs-sub">Admissions & Grades</div>
-            </div>
+            <a href="solutions/cloud-school.html" class="qs-item-v4">
+                <div class="qs-icon-v4 schools">🎓</div>
+                <div class="qs-label-v4">For Schools</div>
+                <div class="qs-sub-v4">Admissions, Grades & Fees</div>
+                <div class="qs-link-v4">
+                    <span>Cloud School</span>
+                    <span>→</span>
+                </div>
+            </a>
 
-            <div class="qs-item">
-                <div class="qs-icon">💧</div>
-                <div class="qs-label">Water</div>
-                <div class="qs-sub">Billing & Meters</div>
-            </div>
+            <a href="solutions/majicloud.html" class="qs-item-v4">
+                <div class="qs-icon-v4 water">💧</div>
+                <div class="qs-label-v4">For Water Utilities</div>
+                <div class="qs-sub-v4">Billing & Smart Meters</div>
+                <div class="qs-link-v4">
+                    <span>MajiCloud</span>
+                    <span>→</span>
+                </div>
+            </a>
 
-            <div class="qs-item">
-                <div class="qs-icon">🤝</div>
-                <div class="qs-label">Groups</div>
-                <div class="qs-sub">Member Mgmt</div>
-            </div>
+            <a href="solutions/shiriki365.html" class="qs-item-v4">
+                <div class="qs-icon-v4 groups">🤝</div>
+                <div class="qs-label-v4">For Associations</div>
+                <div class="qs-sub-v4">Member & SACCO Mgmt</div>
+                <div class="qs-link-v4">
+                    <span>Shiriki365</span>
+                    <span>→</span>
+                </div>
+            </a>
 
-            <div class="qs-item">
-                <div class="qs-icon">🏪</div>
-                <div class="qs-label">Retail</div>
-                <div class="qs-sub">POS & Inventory</div>
-            </div>
+            <a href="solutions/ikomali.html" class="qs-item-v4">
+                <div class="qs-icon-v4 retail">🏪</div>
+                <div class="qs-label-v4">For Business</div>
+                <div class="qs-sub-v4">POS, Inventory & ERP</div>
+                <div class="qs-link-v4">
+                    <span>IkoMali</span>
+                    <span>→</span>
+                </div>
+            </a>
 
         </div>
     </div>

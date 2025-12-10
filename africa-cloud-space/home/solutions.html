@@ -1,43 +1,414 @@
-<section class="container section-pad">
-    <div class="section-header">
-        <span class="section-tag">OUR ECOSYSTEM</span>
-        <h2 class="section-title">Platforms that Power Progress</h2>
-    </div>
+<!-- Solutions: Bento Grid Product Showcase -->
+<style>
+    .solutions-v4 {
+        padding: 100px 0;
+        background: linear-gradient(180deg, #f8fafc 0%, #ffffff 100%);
+        position: relative;
+    }
 
-    <div class="sol-grid">
+    .solutions-v4::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 200px;
+        background: linear-gradient(180deg, #e0f7fa 0%, transparent 100%);
+        opacity: 0.3;
+    }
 
-        <!-- Education Card -->
-        <div class="sol-card">
-            <img src="https://images.unsplash.com/photo-1427504494785-3a9ca7044f45?q=80&w=800&auto=format&fit=crop" alt="African Students" class="sol-img">
-            <div class="sol-body">
-                <span class="sol-cat">CLOUD SCHOOL</span>
-                <h3 class="sol-head">Education Management</h3>
-                <p class="sol-txt">Automate report cards, finance, and parent communication via SMS.</p>
-                <a href="#" class="sol-link">View Platform →</a>
-            </div>
+    .section-header-v4 {
+        text-align: center;
+        margin-bottom: 70px;
+        position: relative;
+    }
+
+    .section-tag-v4 {
+        display: inline-block;
+        background: linear-gradient(135deg, rgba(0, 180, 216, 0.1) 0%, rgba(16, 185, 129, 0.1) 100%);
+        color: #0077b6;
+        padding: 10px 24px;
+        border-radius: 50px;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        margin-bottom: 20px;
+    }
+
+    .section-title-v4 {
+        font-size: 3rem;
+        color: #021a2e;
+        font-weight: 800;
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+
+    .section-subtitle-v4 {
+        font-size: 1.15rem;
+        color: #64748b;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    /* Bento Grid */
+    .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        grid-template-rows: auto auto;
+        gap: 24px;
+    }
+
+    .bento-card {
+        background: #fff;
+        border-radius: 24px;
+        overflow: hidden;
+        border: 1px solid #e2e8f0;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        position: relative;
+    }
+
+    .bento-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+        border-color: #00b4d8;
+    }
+
+    /* Layout variations */
+    .bento-card.large {
+        grid-column: span 7;
+    }
+
+    .bento-card.medium {
+        grid-column: span 5;
+    }
+
+    .bento-card-inner {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+    }
+
+    .bento-img {
+        height: 240px;
+        width: 100%;
+        object-fit: cover;
+        transition: transform 0.6s ease;
+    }
+
+    .bento-card:hover .bento-img {
+        transform: scale(1.05);
+    }
+
+    .bento-img-wrap {
+        overflow: hidden;
+        position: relative;
+    }
+
+    .bento-img-wrap::after {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background: linear-gradient(to top, rgba(255, 255, 255, 1) 0%, transparent 100%);
+    }
+
+    .bento-content {
+        padding: 30px;
+        flex: 1;
+        display: flex;
+        flex-direction: column;
+    }
+
+    .bento-tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 0.75rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        margin-bottom: 12px;
+    }
+
+    .bento-tag.education {
+        color: #0369a1;
+    }
+
+    .bento-tag.utilities {
+        color: #047857;
+    }
+
+    .bento-tag.membership {
+        color: #be185d;
+    }
+
+    .bento-tag.business {
+        color: #b45309;
+    }
+
+    .bento-title {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.5rem;
+        font-weight: 700;
+        color: #021a2e;
+        margin-bottom: 12px;
+        line-height: 1.3;
+    }
+
+    .bento-desc {
+        color: #64748b;
+        font-size: 0.95rem;
+        line-height: 1.7;
+        margin-bottom: 20px;
+        flex: 1;
+    }
+
+    .bento-features {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-bottom: 25px;
+    }
+
+    .bento-feature {
+        background: #f1f5f9;
+        color: #475569;
+        padding: 6px 14px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+        font-weight: 500;
+    }
+
+    .bento-feature.highlight {
+        background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+        color: #fff;
+    }
+
+    .bento-link {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #0077b6;
+        font-weight: 700;
+        font-size: 0.95rem;
+        transition: gap 0.3s ease;
+    }
+
+    .bento-card:hover .bento-link {
+        gap: 14px;
+    }
+
+    /* Metric badge */
+    .metric-badge {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        padding: 10px 16px;
+        border-radius: 12px;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+        z-index: 5;
+    }
+
+    .metric-value {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.3rem;
+        font-weight: 800;
+        color: #10b981;
+    }
+
+    .metric-label {
+        font-size: 0.7rem;
+        color: #64748b;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+    }
+
+    /* Mobile */
+    @media (max-width: 1024px) {
+        .bento-grid {
+            grid-template-columns: 1fr 1fr;
+        }
+
+        .bento-card.large,
+        .bento-card.medium {
+            grid-column: span 1;
+        }
+
+        .section-title-v4 {
+            font-size: 2.2rem;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .solutions-v4 {
+            padding: 60px 0;
+        }
+
+        .bento-grid {
+            grid-template-columns: 1fr;
+        }
+
+        .bento-card.large,
+        .bento-card.medium {
+            grid-column: span 1;
+        }
+
+        .bento-img {
+            height: 180px;
+        }
+
+        .bento-content {
+            padding: 20px;
+        }
+
+        .section-title-v4 {
+            font-size: 1.8rem;
+        }
+    }
+</style>
+
+<section class="solutions-v4" id="solutions">
+    <div class="container">
+        <div class="section-header-v4">
+            <span class="section-tag-v4">Our Ecosystem</span>
+            <h2 class="section-title-v4">Platforms that Power Progress</h2>
+            <p class="section-subtitle-v4">
+                Four integrated SaaS products designed specifically for African institutions
+            </p>
         </div>
 
-        <!-- Utilities Card -->
-        <div class="sol-card">
-            <img src="https://images.unsplash.com/photo-1536338071644-3d92003c40f1?q=80&w=800&auto=format&fit=crop" alt="Field Worker" class="sol-img">
-            <div class="sol-body">
-                <span class="sol-cat">MAJICLOUD</span>
-                <h3 class="sol-head">Water Utility Billing</h3>
-                <p class="sol-txt">Smart meter reading app with instant M-Pesa reconciliation.</p>
-                <a href="#" class="sol-link">View Platform →</a>
-            </div>
-        </div>
+        <div class="bento-grid">
 
-        <!-- Business Card -->
-        <div class="sol-card">
-            <img src="https://images.unsplash.com/photo-1664575602276-acd073f104c1?q=80&w=800&auto=format&fit=crop" alt="African Shop Owner" class="sol-img">
-            <div class="sol-body">
-                <span class="sol-cat">IKOMALI</span>
-                <h3 class="sol-head">Business ERP & POS</h3>
-                <p class="sol-txt">Track stock, sales, and profits from your phone or laptop.</p>
-                <a href="#" class="sol-link">View Platform →</a>
+            <!-- Cloud School - Large -->
+            <div class="bento-card large">
+                <div class="bento-card-inner">
+                    <div class="bento-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=1000&auto=format&fit=crop"
+                            alt="African Students in Classroom" class="bento-img">
+                        <div class="metric-badge">
+                            <div class="metric-value">150+</div>
+                            <div class="metric-label">Schools Live</div>
+                        </div>
+                    </div>
+                    <div class="bento-content">
+                        <span class="bento-tag education">🎓 Education Management</span>
+                        <h3 class="bento-title">Cloud School</h3>
+                        <p class="bento-desc">
+                            Complete school management system with automated report cards, fee collection,
+                            parent SMS portals, and admission workflows. Used by top Kenyan schools.
+                        </p>
+                        <div class="bento-features">
+                            <span class="bento-feature highlight">M-Pesa Fees</span>
+                            <span class="bento-feature">SMS Reports</span>
+                            <span class="bento-feature">Online Admission</span>
+                            <span class="bento-feature">Exam Analysis</span>
+                        </div>
+                        <a href="solutions/cloud-school.html" class="bento-link">
+                            <span>Explore Cloud School</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
             </div>
-        </div>
 
+            <!-- MajiCloud - Medium -->
+            <div class="bento-card medium">
+                <div class="bento-card-inner">
+                    <div class="bento-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1541544741-207e0c95e73c?q=80&w=800&auto=format&fit=crop"
+                            alt="Water Meter Reading" class="bento-img">
+                        <div class="metric-badge">
+                            <div class="metric-value">50+</div>
+                            <div class="metric-label">Utilities</div>
+                        </div>
+                    </div>
+                    <div class="bento-content">
+                        <span class="bento-tag utilities">💧 Utility Billing</span>
+                        <h3 class="bento-title">MajiCloud</h3>
+                        <p class="bento-desc">
+                            Smart water billing with mobile meter reading app, instant payment reconciliation, and
+                            customer portals.
+                        </p>
+                        <div class="bento-features">
+                            <span class="bento-feature highlight">M-Pesa Ready</span>
+                            <span class="bento-feature">Meter App</span>
+                            <span class="bento-feature">SMS Alerts</span>
+                        </div>
+                        <a href="solutions/majicloud.html" class="bento-link">
+                            <span>Explore MajiCloud</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Shiriki365 - Medium -->
+            <div class="bento-card medium">
+                <div class="bento-card-inner">
+                    <div class="bento-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?q=80&w=800&auto=format&fit=crop"
+                            alt="African Community Group" class="bento-img">
+                        <div class="metric-badge">
+                            <div class="metric-value">80+</div>
+                            <div class="metric-label">Groups</div>
+                        </div>
+                    </div>
+                    <div class="bento-content">
+                        <span class="bento-tag membership">🤝 Membership Management</span>
+                        <h3 class="bento-title">Shiriki365</h3>
+                        <p class="bento-desc">
+                            Manage SACCOs, chamas, associations and member organizations with ease.
+                        </p>
+                        <div class="bento-features">
+                            <span class="bento-feature highlight">Loan Tracking</span>
+                            <span class="bento-feature">E-Voting</span>
+                            <span class="bento-feature">Contributions</span>
+                        </div>
+                        <a href="solutions/shiriki365.html" class="bento-link">
+                            <span>Explore Shiriki365</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- IkoMali - Large -->
+            <div class="bento-card large">
+                <div class="bento-card-inner">
+                    <div class="bento-img-wrap">
+                        <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?q=80&w=1000&auto=format&fit=crop"
+                            alt="African Retail Shop" class="bento-img">
+                        <div class="metric-badge">
+                            <div class="metric-value">200+</div>
+                            <div class="metric-label">Retailers</div>
+                        </div>
+                    </div>
+                    <div class="bento-content">
+                        <span class="bento-tag business">🏪 Business Management</span>
+                        <h3 class="bento-title">IkoMali</h3>
+                        <p class="bento-desc">
+                            Complete POS and ERP system for retailers and SMEs. Track inventory, manage sales,
+                            view profit reports, and handle multi-branch operations from your phone.
+                        </p>
+                        <div class="bento-features">
+                            <span class="bento-feature highlight">Cloud POS</span>
+                            <span class="bento-feature">Inventory Sync</span>
+                            <span class="bento-feature">Profit Reports</span>
+                            <span class="bento-feature">Multi-Branch</span>
+                        </div>
+                        <a href="solutions/ikomali.html" class="bento-link">
+                            <span>Explore IkoMali</span>
+                            <span>→</span>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
     </div>
 </section>

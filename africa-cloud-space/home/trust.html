@@ -1,11 +1,272 @@
-<section class="trust-bar">
+<!-- Trust Bar: Partner & Client Showcase -->
+<style>
+    .trust-v4 {
+        background: linear-gradient(180deg, #0f172a 0%, #1e293b 100%);
+        padding: 80px 0;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .trust-v4::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background:
+            radial-gradient(ellipse at top, rgba(0, 180, 216, 0.05) 0%, transparent 50%),
+            radial-gradient(ellipse at bottom, rgba(16, 185, 129, 0.05) 0%, transparent 50%);
+        pointer-events: none;
+    }
+
+    .trust-content {
+        text-align: center;
+        position: relative;
+        z-index: 2;
+    }
+
+    .trust-tag {
+        display: inline-block;
+        color: #00b4d8;
+        font-size: 0.85rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 3px;
+        margin-bottom: 15px;
+    }
+
+    .trust-title {
+        font-size: 2.5rem;
+        font-weight: 800;
+        color: #fff;
+        margin-bottom: 15px;
+    }
+
+    .trust-title span {
+        background: linear-gradient(90deg, #00b4d8, #10b981);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .trust-subtitle {
+        color: rgba(255, 255, 255, 0.6);
+        font-size: 1.1rem;
+        margin-bottom: 50px;
+    }
+
+    /* Stats Row */
+    .trust-stats {
+        display: flex;
+        justify-content: center;
+        gap: 60px;
+        margin-bottom: 60px;
+        flex-wrap: wrap;
+    }
+
+    .trust-stat {
+        text-align: center;
+    }
+
+    .trust-stat-number {
+        font-size: 3rem;
+        font-weight: 800;
+        color: #fff;
+        line-height: 1;
+        margin-bottom: 8px;
+    }
+
+    .trust-stat-number span {
+        color: #10b981;
+    }
+
+    .trust-stat-label {
+        font-size: 0.9rem;
+        color: rgba(255, 255, 255, 0.5);
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* Logo Grid */
+    .trust-logos-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 30px;
+        align-items: center;
+    }
+
+    .trust-logo-item {
+        background: rgba(255, 255, 255, 0.03);
+        border: 1px solid rgba(255, 255, 255, 0.08);
+        border-radius: 16px;
+        padding: 30px 25px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .trust-logo-item:hover {
+        background: rgba(255, 255, 255, 0.08);
+        border-color: rgba(0, 180, 216, 0.3);
+        transform: translateY(-5px);
+    }
+
+    .trust-logo-name {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.95rem;
+        font-weight: 700;
+        color: rgba(255, 255, 255, 0.7);
+        letter-spacing: 0.5px;
+        transition: color 0.3s ease;
+    }
+
+    .trust-logo-item:hover .trust-logo-name {
+        color: #fff;
+    }
+
+    .trust-logo-type {
+        font-size: 0.75rem;
+        color: rgba(255, 255, 255, 0.4);
+        margin-top: 6px;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+    }
+
+    /* CTA */
+    .trust-cta {
+        margin-top: 60px;
+    }
+
+    .trust-cta-text {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 1.1rem;
+        margin-bottom: 20px;
+    }
+
+    .btn-trust {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        background: transparent;
+        border: 2px solid rgba(255, 255, 255, 0.3);
+        color: #fff;
+        padding: 16px 35px;
+        border-radius: 50px;
+        font-weight: 600;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+    }
+
+    .btn-trust:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: #00b4d8;
+        transform: translateY(-3px);
+    }
+
+    /* Mobile */
+    @media (max-width: 1024px) {
+        .trust-logos-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+
+        .trust-stats {
+            gap: 40px;
+        }
+
+        .trust-title {
+            font-size: 2rem;
+        }
+    }
+
+    @media (max-width: 600px) {
+        .trust-v4 {
+            padding: 60px 0;
+        }
+
+        .trust-logos-grid {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+
+        .trust-logo-item {
+            padding: 20px 15px;
+        }
+
+        .trust-stats {
+            flex-direction: column;
+            gap: 25px;
+        }
+
+        .trust-stat-number {
+            font-size: 2.5rem;
+        }
+
+        .trust-title {
+            font-size: 1.6rem;
+        }
+    }
+</style>
+
+<section class="trust-v4">
     <div class="container">
-        <h2 style="font-size: 2rem; margin-bottom: 10px;">Trusted by 300+ Organizations</h2>
-        <div class="trust-logos">
-            <span class="trust-logo">ST. JULIAN SCHOOLS</span>
-            <span class="trust-logo">KABUKU WATER</span>
-            <span class="trust-logo">AAK MEMBERSHIP</span>
-            <span class="trust-logo">AMNESTY INTL</span>
+        <div class="trust-content">
+            <span class="trust-tag">Trusted Across Africa</span>
+            <h2 class="trust-title">
+                Powering Innovation for <span>300+ Organizations</span>
+            </h2>
+            <p class="trust-subtitle">
+                From schools in Nairobi to water utilities in Mombasa, we're the backbone of digital transformation
+            </p>
+
+            <div class="trust-stats">
+                <div class="trust-stat">
+                    <div class="trust-stat-number">300<span>+</span></div>
+                    <div class="trust-stat-label">Active Clients</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="trust-stat-number">1M<span>+</span></div>
+                    <div class="trust-stat-label">Transactions/Month</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="trust-stat-number">6<span>+</span></div>
+                    <div class="trust-stat-label">Years in Business</div>
+                </div>
+                <div class="trust-stat">
+                    <div class="trust-stat-number">47<span></span></div>
+                    <div class="trust-stat-label">Counties Reached</div>
+                </div>
+            </div>
+
+            <div class="trust-logos-grid">
+                <div class="trust-logo-item">
+                    <div class="trust-logo-name">Kabuku Water</div>
+                    <div class="trust-logo-type">Water Utility</div>
+                </div>
+                <div class="trust-logo-item">
+                    <div class="trust-logo-name">Kiota School</div>
+                    <div class="trust-logo-type">Education</div>
+                </div>
+                <div class="trust-logo-item">
+                    <div class="trust-logo-name">St. Julian Academy</div>
+                    <div class="trust-logo-type">Education</div>
+                </div>
+                <div class="trust-logo-item">
+                    <div class="trust-logo-name">AAK Members</div>
+                    <div class="trust-logo-type">Association</div>
+                </div>
+                <div class="trust-logo-item">
+                    <div class="trust-logo-name">Amnesty Intl</div>
+                    <div class="trust-logo-type">NGO</div>
+                </div>
+            </div>
+
+            <div class="trust-cta">
+                <p class="trust-cta-text">Ready to join our growing family of partners?</p>
+                <a href="#contact" class="btn-trust">
+                    <span>Become a Partner</span>
+                    <span>→</span>
+                </a>
+            </div>
         </div>
     </div>
 </section>

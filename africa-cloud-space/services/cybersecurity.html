@@ -1,0 +1,977 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Cybersecurity & Audit Services - Comprehensive security audits, vulnerability assessments, and Kenya Data Protection Act compliance for modern institutions.">
+    <meta name="keywords"
+        content="cybersecurity, security audit, penetration testing, data protection, Kenya Data Protection Act, compliance, vulnerability assessment">
+    <title>Cybersecurity & Audit | Africa Cloud Space</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Global Stylesheet -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <!-- Page-Specific Styles -->
+    <style>
+        /* =========================================
+           CYBERSECURITY PAGE - "THE SHIELD"
+           ========================================= */
+
+        /* Hero Section */
+        .security-hero {
+            background: linear-gradient(135deg, #021a2e 0%, #0a1929 50%, #021a2e 100%);
+            color: var(--white);
+            padding: 140px 0 120px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .security-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background:
+                radial-gradient(circle at 30% 70%, rgba(6, 182, 212, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 70% 30%, rgba(6, 182, 212, 0.06) 0%, transparent 35%);
+            pointer-events: none;
+        }
+
+        /* Network Node Visualization */
+        .network-bg {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        .network-node {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: rgba(6, 182, 212, 0.4);
+            border-radius: 50%;
+            box-shadow: 0 0 20px rgba(6, 182, 212, 0.3);
+        }
+
+        .network-node:nth-child(1) {
+            top: 20%;
+            left: 10%;
+            animation: pulse 3s infinite;
+        }
+
+        .network-node:nth-child(2) {
+            top: 40%;
+            left: 25%;
+            animation: pulse 3s infinite 0.5s;
+        }
+
+        .network-node:nth-child(3) {
+            top: 60%;
+            left: 15%;
+            animation: pulse 3s infinite 1s;
+        }
+
+        .network-node:nth-child(4) {
+            top: 30%;
+            right: 20%;
+            animation: pulse 3s infinite 1.5s;
+        }
+
+        .network-node:nth-child(5) {
+            top: 70%;
+            right: 10%;
+            animation: pulse 3s infinite 2s;
+        }
+
+        .network-node:nth-child(6) {
+            top: 50%;
+            right: 30%;
+            animation: pulse 3s infinite 2.5s;
+        }
+
+        .network-line {
+            position: absolute;
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(6, 182, 212, 0.2), transparent);
+            transform-origin: left center;
+        }
+
+        .network-line:nth-child(7) {
+            top: 25%;
+            left: 12%;
+            width: 200px;
+            transform: rotate(25deg);
+        }
+
+        .network-line:nth-child(8) {
+            top: 45%;
+            left: 18%;
+            width: 150px;
+            transform: rotate(-15deg);
+        }
+
+        .network-line:nth-child(9) {
+            top: 35%;
+            right: 15%;
+            width: 180px;
+            transform: rotate(10deg);
+        }
+
+        @keyframes pulse {
+
+            0%,
+            100% {
+                transform: scale(1);
+                opacity: 0.4;
+            }
+
+            50% {
+                transform: scale(1.5);
+                opacity: 0.8;
+            }
+        }
+
+        .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .hero-content {
+            position: relative;
+        }
+
+        .hero-badge {
+            background: rgba(6, 182, 212, 0.15);
+            color: #06b6d4;
+            border: 1px solid rgba(6, 182, 212, 0.4);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-bottom: 25px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        .security-hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 25px;
+        }
+
+        .security-hero h1 span {
+            color: #06b6d4;
+        }
+
+        .hero-sub {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            line-height: 1.7;
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .btn-audit {
+            background: linear-gradient(135deg, #06b6d4, #0891b2);
+            color: var(--white);
+            padding: 18px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            border: none;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .btn-audit:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(6, 182, 212, 0.4);
+        }
+
+        /* Shield Visual */
+        .hero-visual {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            position: relative;
+        }
+
+        .shield-container {
+            position: relative;
+            width: 300px;
+            height: 350px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .shield-icon {
+            font-size: 180px;
+            color: #06b6d4;
+            position: relative;
+            z-index: 2;
+            filter: drop-shadow(0 20px 40px rgba(6, 182, 212, 0.3));
+        }
+
+        .shield-ring {
+            position: absolute;
+            border: 2px solid rgba(6, 182, 212, 0.2);
+            border-radius: 50%;
+            animation: rotateRing 20s linear infinite;
+        }
+
+        .shield-ring:nth-child(1) {
+            width: 280px;
+            height: 280px;
+        }
+
+        .shield-ring:nth-child(2) {
+            width: 340px;
+            height: 340px;
+            animation-direction: reverse;
+            animation-duration: 25s;
+        }
+
+        .shield-ring:nth-child(3) {
+            width: 400px;
+            height: 400px;
+            animation-duration: 30s;
+        }
+
+        @keyframes rotateRing {
+            from {
+                transform: rotate(0deg);
+            }
+
+            to {
+                transform: rotate(360deg);
+            }
+        }
+
+        /* Risk Reality Section */
+        .risk-section {
+            background: #0f172a;
+            padding: 80px 0;
+            border-top: 1px solid rgba(6, 182, 212, 0.15);
+            border-bottom: 1px solid rgba(6, 182, 212, 0.15);
+        }
+
+        .risk-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+        }
+
+        .risk-card {
+            text-align: center;
+            padding: 40px 30px;
+            background: rgba(6, 182, 212, 0.05);
+            border: 1px solid rgba(6, 182, 212, 0.1);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+
+        .risk-card:hover {
+            background: rgba(6, 182, 212, 0.1);
+            border-color: rgba(6, 182, 212, 0.3);
+            transform: translateY(-5px);
+        }
+
+        .risk-stat {
+            font-size: 3.5rem;
+            font-weight: 800;
+            color: #06b6d4;
+            margin-bottom: 15px;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .risk-label {
+            color: #94a3b8;
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Services Grid Section */
+        .services-section {
+            padding: 120px 0;
+            background: var(--bg-offwhite);
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .section-tag {
+            color: #06b6d4;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .section-title {
+            font-size: 2.8rem;
+            color: #021a2e;
+            font-weight: 700;
+            margin-bottom: 20px;
+        }
+
+        .section-desc {
+            color: var(--text-grey);
+            font-size: 1.1rem;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 30px;
+        }
+
+        .service-card {
+            background: var(--white);
+            border-radius: 20px;
+            padding: 50px 40px;
+            border: 1px solid #e2e8f0;
+            transition: all 0.4s ease;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        .service-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #06b6d4, #0077b6);
+            transform: scaleX(0);
+            transform-origin: center;
+            transition: transform 0.4s ease;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(2, 26, 46, 0.12);
+        }
+
+        .service-card:hover::before {
+            transform: scaleX(1);
+        }
+
+        .service-icon {
+            width: 90px;
+            height: 90px;
+            background: linear-gradient(135deg, #021a2e, #0a1929);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 36px;
+            color: #06b6d4;
+            margin: 0 auto 30px auto;
+            border: 2px solid rgba(6, 182, 212, 0.3);
+        }
+
+        .service-card h3 {
+            font-size: 1.5rem;
+            color: #021a2e;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .service-card p {
+            color: var(--text-grey);
+            line-height: 1.7;
+            font-size: 1rem;
+        }
+
+        .service-tagline {
+            margin-top: 20px;
+            padding-top: 20px;
+            border-top: 1px solid #f1f5f9;
+            color: #06b6d4;
+            font-weight: 600;
+            font-size: 0.95rem;
+            font-style: italic;
+        }
+
+        /* Audit Roadmap Section */
+        .roadmap-section {
+            padding: 120px 0;
+            background: linear-gradient(180deg, #021a2e 0%, #0a1929 100%);
+            color: var(--white);
+        }
+
+        .roadmap-timeline {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-top: 70px;
+            position: relative;
+        }
+
+        .roadmap-timeline::before {
+            content: '';
+            position: absolute;
+            top: 60px;
+            left: 10%;
+            right: 10%;
+            height: 3px;
+            background: linear-gradient(90deg, #06b6d4, #0077b6, #06b6d4);
+            z-index: 1;
+        }
+
+        .roadmap-step {
+            flex: 1;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            padding: 0 20px;
+        }
+
+        .step-number {
+            width: 100px;
+            height: 100px;
+            background: linear-gradient(135deg, #06b6d4, #0077b6);
+            border-radius: 50%;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 30px auto;
+            box-shadow: 0 15px 40px rgba(6, 182, 212, 0.35);
+            border: 4px solid #0a1929;
+        }
+
+        .step-num {
+            font-size: 1.8rem;
+            font-weight: 800;
+            color: var(--white);
+            line-height: 1;
+        }
+
+        .step-label {
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: rgba(255, 255, 255, 0.8);
+        }
+
+        .roadmap-step h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: var(--white);
+        }
+
+        .roadmap-step p {
+            color: #94a3b8;
+            font-size: 0.95rem;
+            line-height: 1.7;
+            max-width: 280px;
+            margin: 0 auto;
+        }
+
+        /* CTA Section */
+        .cta-section {
+            padding: 100px 0;
+            background: var(--bg-offwhite);
+        }
+
+        .cta-card {
+            background: linear-gradient(135deg, #021a2e 0%, #0a1929 100%);
+            border-radius: 24px;
+            padding: 80px 60px;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-card::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 600px;
+            height: 600px;
+            background: radial-gradient(circle, rgba(6, 182, 212, 0.1), transparent 60%);
+            pointer-events: none;
+        }
+
+        .cta-shield {
+            font-size: 80px;
+            color: #06b6d4;
+            margin-bottom: 30px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-content h2 {
+            font-size: 2.5rem;
+            color: var(--white);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .cta-content p {
+            color: #94a3b8;
+            font-size: 1.15rem;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.7;
+        }
+
+        .cta-features {
+            display: flex;
+            justify-content: center;
+            gap: 40px;
+            margin-bottom: 45px;
+            flex-wrap: wrap;
+        }
+
+        .cta-feature {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #94a3b8;
+            font-size: 0.95rem;
+        }
+
+        .cta-feature i {
+            color: #10b981;
+        }
+
+        /* Compliance Badge */
+        .compliance-bar {
+            background: var(--white);
+            padding: 60px 0;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .compliance-content {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 60px;
+            flex-wrap: wrap;
+        }
+
+        .compliance-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            color: #021a2e;
+        }
+
+        .compliance-icon {
+            width: 50px;
+            height: 50px;
+            background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(0, 119, 182, 0.1));
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #06b6d4;
+            font-size: 20px;
+        }
+
+        .compliance-item span {
+            font-weight: 600;
+            font-size: 0.95rem;
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 1024px) {
+            .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .hero-sub {
+                margin: 0 auto 40px auto;
+            }
+
+            .hero-visual {
+                display: none;
+            }
+
+            .risk-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .roadmap-timeline {
+                flex-direction: column;
+                gap: 60px;
+            }
+
+            .roadmap-timeline::before {
+                display: none;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .security-hero {
+                padding: 100px 0 80px 0;
+            }
+
+            .security-hero h1 {
+                font-size: 2.2rem;
+            }
+
+            .hero-sub {
+                font-size: 1rem;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .cta-content h2 {
+                font-size: 1.8rem;
+            }
+
+            .compliance-content {
+                gap: 30px;
+            }
+
+            .cta-features {
+                gap: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Container -->
+    <header id="header-slot" class="main-header"></header>
+
+    <!-- Hero Section -->
+    <section class="security-hero">
+        <!-- Network Visualization Background -->
+        <div class="network-bg">
+            <div class="network-node"></div>
+            <div class="network-node"></div>
+            <div class="network-node"></div>
+            <div class="network-node"></div>
+            <div class="network-node"></div>
+            <div class="network-node"></div>
+            <div class="network-line"></div>
+            <div class="network-line"></div>
+            <div class="network-line"></div>
+        </div>
+
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <span class="hero-badge">
+                        <i class="fas fa-shield-alt"></i> Cybersecurity & Audit
+                    </span>
+                    <h1>Protect Your Data. <span>Protect Your Reputation.</span></h1>
+                    <p class="hero-sub">
+                        Comprehensive security audits and compliance strategies for modern institutions.
+                        We safeguard your digital assets with enterprise-grade protection.
+                    </p>
+                    <a href="#audit" class="btn-audit">
+                        <i class="fas fa-clipboard-check"></i> Request a Security Audit
+                    </a>
+                </div>
+                <div class="hero-visual">
+                    <div class="shield-container">
+                        <div class="shield-ring"></div>
+                        <div class="shield-ring"></div>
+                        <div class="shield-ring"></div>
+                        <i class="fas fa-shield-alt shield-icon"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Compliance Bar -->
+    <section class="compliance-bar">
+        <div class="container">
+            <div class="compliance-content">
+                <div class="compliance-item">
+                    <div class="compliance-icon">
+                        <i class="fas fa-gavel"></i>
+                    </div>
+                    <span>Kenya Data Protection Act Compliant</span>
+                </div>
+                <div class="compliance-item">
+                    <div class="compliance-icon">
+                        <i class="fas fa-globe-africa"></i>
+                    </div>
+                    <span>GDPR Ready</span>
+                </div>
+                <div class="compliance-item">
+                    <div class="compliance-icon">
+                        <i class="fas fa-certificate"></i>
+                    </div>
+                    <span>ISO 27001 Standards</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Risk Reality Section -->
+    <section class="risk-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="color: #06b6d4;">The Risk Reality</span>
+                <h2 class="section-title" style="color: #fff;">Why Security Can't Wait</h2>
+            </div>
+            <div class="risk-grid">
+                <div class="risk-card">
+                    <div class="risk-stat">40%</div>
+                    <p class="risk-label">of Kenyan businesses faced a cyber threat last year</p>
+                </div>
+                <div class="risk-card">
+                    <div class="risk-stat">$3.9M</div>
+                    <p class="risk-label">Average cost of a data breach globally</p>
+                </div>
+                <div class="risk-card">
+                    <div class="risk-stat">287</div>
+                    <p class="risk-label">Days average time to identify a breach</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Core Services Section -->
+    <section class="services-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Our Services</span>
+                <h2 class="section-title">Comprehensive Security Solutions</h2>
+                <p class="section-desc">
+                    Proactive protection and compliance assurance for your organization.
+                </p>
+            </div>
+
+            <div class="services-grid">
+                <!-- Vulnerability Assessments -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-search-plus"></i>
+                    </div>
+                    <h3>Vulnerability Assessments</h3>
+                    <p>
+                        Systematic evaluation of your infrastructure to identify security weaknesses
+                        before they can be exploited. We use industry-leading tools and methodologies
+                        to uncover hidden risks.
+                    </p>
+                    <div class="service-tagline">
+                        "We find the holes before hackers do."
+                    </div>
+                </div>
+
+                <!-- Data Compliance -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-balance-scale"></i>
+                    </div>
+                    <h3>Data Compliance</h3>
+                    <p>
+                        Navigate the complex landscape of data protection regulations with confidence.
+                        We ensure your organization meets all requirements of the Kenya Data Protection Act
+                        and international standards.
+                    </p>
+                    <div class="service-tagline">
+                        "Adhere to the Kenya Data Protection Act."
+                    </div>
+                </div>
+
+                <!-- Employee Training -->
+                <div class="service-card">
+                    <div class="service-icon">
+                        <i class="fas fa-users-cog"></i>
+                    </div>
+                    <h3>Employee Training</h3>
+                    <p>
+                        Transform your workforce into a security-conscious culture. Our customized
+                        training programs equip your team to recognize threats and respond appropriately
+                        to security incidents.
+                    </p>
+                    <div class="service-tagline">
+                        "Turn your staff into your first line of defense."
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Audit Roadmap Section -->
+    <section class="roadmap-section">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag" style="color: #06b6d4;">The Audit Roadmap</span>
+                <h2 class="section-title" style="color: #fff;">Your Path to Security Confidence</h2>
+                <p class="section-desc" style="color: #94a3b8;">
+                    A structured approach to identifying, addressing, and certifying your security posture.
+                </p>
+            </div>
+
+            <div class="roadmap-timeline">
+                <!-- Step 1 -->
+                <div class="roadmap-step">
+                    <div class="step-number">
+                        <span class="step-num">1</span>
+                        <span class="step-label">Step</span>
+                    </div>
+                    <h3>Assessment</h3>
+                    <p>
+                        Comprehensive evaluation of your current security infrastructure, policies,
+                        and practices. We identify vulnerabilities and map your risk landscape.
+                    </p>
+                </div>
+
+                <!-- Step 2 -->
+                <div class="roadmap-step">
+                    <div class="step-number">
+                        <span class="step-num">2</span>
+                        <span class="step-label">Step</span>
+                    </div>
+                    <h3>Report & Fix</h3>
+                    <p>
+                        Detailed findings report with prioritized remediation recommendations.
+                        We work alongside your team to implement security enhancements.
+                    </p>
+                </div>
+
+                <!-- Step 3 -->
+                <div class="roadmap-step">
+                    <div class="step-number">
+                        <span class="step-num">3</span>
+                        <span class="step-label">Step</span>
+                    </div>
+                    <h3>Certification</h3>
+                    <p>
+                        Final verification and sign-off. Receive documentation confirming
+                        your compliance status and security improvements for stakeholder assurance.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="audit">
+        <div class="container">
+            <div class="cta-card">
+                <div class="cta-shield">
+                    <i class="fas fa-user-shield"></i>
+                </div>
+                <div class="cta-content">
+                    <h2>Secure Your Organization Today</h2>
+                    <p>
+                        Don't leave your security to chance. Our expert team will conduct a thorough
+                        assessment of your infrastructure and provide actionable recommendations
+                        to strengthen your defenses.
+                    </p>
+                    <div class="cta-features">
+                        <div class="cta-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Confidential assessment</span>
+                        </div>
+                        <div class="cta-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Executive summary report</span>
+                        </div>
+                        <div class="cta-feature">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Remediation roadmap</span>
+                        </div>
+                    </div>
+                    <a href="mailto:security@cloudspace.co.ke" class="btn-audit">
+                        <i class="fas fa-clipboard-check"></i> Request a Security Audit
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Container -->
+    <footer id="footer-slot" class="footer"></footer>
+
+    <!-- Loader Script -->
+    <script src="../js/loader.js"></script>
+
+    <!-- Custom loader for services subdirectory -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Load header and footer from parent directory
+            fetch('../header.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('header-slot').innerHTML = html;
+                    // Re-initialize mobile menu toggle
+                    const mobileToggle = document.querySelector('.mobile-toggle');
+                    const navLinks = document.querySelector('.nav-links');
+                    if (mobileToggle && navLinks) {
+                        mobileToggle.addEventListener('click', () => {
+                            navLinks.classList.toggle('active');
+                        });
+                    }
+                })
+                .catch(err => console.error('Error loading header:', err));
+
+            fetch('../footer.html')
+                .then(response => response.text())
+                .then(html => {
+                    document.getElementById('footer-slot').innerHTML = html;
+                })
+                .catch(err => console.error('Error loading footer:', err));
+        });
+    </script>
+</body>
+
+</html>

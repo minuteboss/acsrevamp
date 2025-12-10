@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="Our Work - Explore Africa Cloud Space's portfolio of successful digital transformation projects across Kenya and Africa.">
+    <title>Our Work | Africa Cloud Space - Proven Digital Results</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Stylesheet -->
+    <link rel="stylesheet" href="../css/styles.css">
+
+    <style>
+        /* =========================================
+           PORTFOLIO PAGE SPECIFIC STYLES
+           ========================================= */
+
+        /* Portfolio Hero */
+        .portfolio-hero {
+            background: linear-gradient(135deg, var(--brand-navy) 0%, #032d50 100%);
+            color: var(--white);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .portfolio-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 40px 40px;
+            pointer-events: none;
+        }
+
+        .portfolio-hero .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .portfolio-badge {
+            background: rgba(0, 180, 216, 0.15);
+            color: var(--brand-cyan);
+            border: 1px solid var(--brand-cyan);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+
+        .portfolio-hero h1 {
+            font-size: 3.5rem;
+            font-weight: 800;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .portfolio-hero h1 span {
+            color: var(--brand-cyan);
+        }
+
+        .portfolio-hero p {
+            font-size: 1.2rem;
+            color: #94a3b8;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+
+        /* Featured Spotlight */
+        .featured-spotlight {
+            background: var(--white);
+            padding: 100px 0;
+        }
+
+        .spotlight-card {
+            display: grid;
+            grid-template-columns: 1.2fr 1fr;
+            gap: 60px;
+            background: var(--bg-offwhite);
+            border-radius: 24px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+        }
+
+        .spotlight-img-wrapper {
+            position: relative;
+            min-height: 500px;
+            overflow: hidden;
+        }
+
+        .spotlight-img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+
+        .spotlight-card:hover .spotlight-img {
+            transform: scale(1.03);
+        }
+
+        .spotlight-badge {
+            position: absolute;
+            top: 30px;
+            left: 30px;
+            background: var(--brand-green);
+            color: var(--white);
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            box-shadow: 0 4px 15px rgba(16, 185, 129, 0.3);
+        }
+
+        .spotlight-content {
+            padding: 50px 50px 50px 0;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .spotlight-tag {
+            color: var(--brand-cyan);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 15px;
+        }
+
+        .spotlight-title {
+            font-size: 2.2rem;
+            font-weight: 700;
+            color: var(--brand-navy);
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .spotlight-desc {
+            color: var(--text-grey);
+            font-size: 1.05rem;
+            line-height: 1.7;
+            margin-bottom: 30px;
+        }
+
+        .spotlight-metrics {
+            display: flex;
+            gap: 30px;
+            margin-bottom: 30px;
+        }
+
+        .metric-item {
+            text-align: center;
+            padding: 20px 25px;
+            background: var(--white);
+            border-radius: 16px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .metric-value {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--brand-blue);
+            display: block;
+        }
+
+        .metric-label {
+            font-size: 0.85rem;
+            color: var(--text-grey);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin-top: 5px;
+        }
+
+        .spotlight-cta {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--brand-navy);
+            color: var(--white);
+            padding: 16px 35px;
+            border-radius: 50px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            width: fit-content;
+        }
+
+        .spotlight-cta:hover {
+            background: var(--brand-cyan);
+            color: var(--brand-navy);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 25px rgba(0, 180, 216, 0.3);
+        }
+
+        /* Project Grid Section */
+        .project-grid-section {
+            background: var(--bg-offwhite);
+            padding: 100px 0;
+        }
+
+        .project-grid-header {
+            text-align: center;
+            margin-bottom: 60px;
+        }
+
+        .project-grid-header .section-tag {
+            color: var(--brand-cyan);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1.5px;
+        }
+
+        .project-grid-header h2 {
+            font-size: 2.5rem;
+            color: var(--brand-navy);
+            margin-top: 15px;
+            font-weight: 700;
+        }
+
+        .projects-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(340px, 1fr));
+            gap: 35px;
+        }
+
+        .project-card {
+            background: var(--white);
+            border-radius: 20px;
+            overflow: hidden;
+            border: 1px solid #e2e8f0;
+            transition: all 0.4s ease;
+            position: relative;
+        }
+
+        .project-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.1);
+            border-color: var(--brand-cyan);
+        }
+
+        .project-card-img {
+            height: 220px;
+            width: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .project-card:hover .project-card-img {
+            transform: scale(1.05);
+        }
+
+        .project-img-wrapper {
+            overflow: hidden;
+            position: relative;
+        }
+
+        .result-tag {
+            position: absolute;
+            bottom: 15px;
+            left: 15px;
+            background: rgba(2, 26, 46, 0.9);
+            backdrop-filter: blur(10px);
+            color: var(--brand-cyan);
+            padding: 8px 16px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            font-weight: 700;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            border: 1px solid rgba(0, 180, 216, 0.3);
+        }
+
+        .project-card-body {
+            padding: 30px;
+        }
+
+        .project-category {
+            color: var(--brand-cyan);
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.75rem;
+            letter-spacing: 1.5px;
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .project-card-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--brand-navy);
+            margin-bottom: 12px;
+            line-height: 1.3;
+        }
+
+        .project-card-desc {
+            color: var(--text-grey);
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+
+        .project-link {
+            color: var(--brand-blue);
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            transition: gap 0.3s ease;
+        }
+
+        .project-link:hover {
+            gap: 12px;
+            color: var(--brand-cyan);
+        }
+
+        /* CTA Banner */
+        .cta-banner {
+            background: linear-gradient(135deg, var(--brand-navy) 0%, #032d50 100%);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-banner::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: radial-gradient(rgba(0, 180, 216, 0.1) 1px, transparent 1px);
+            background-size: 50px 50px;
+            pointer-events: none;
+        }
+
+        .cta-banner .container {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-icon {
+            font-size: 4rem;
+            margin-bottom: 25px;
+            display: block;
+        }
+
+        .cta-banner h2 {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: var(--white);
+            margin-bottom: 15px;
+        }
+
+        .cta-banner p {
+            color: #94a3b8;
+            font-size: 1.15rem;
+            margin-bottom: 35px;
+            max-width: 550px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            background: var(--white);
+            color: var(--brand-navy);
+            padding: 18px 45px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            transition: all 0.3s ease;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .cta-btn:hover {
+            background: var(--brand-cyan);
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 180, 216, 0.3);
+        }
+
+        /* Responsive Styles */
+        @media (max-width: 968px) {
+            .portfolio-hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .spotlight-card {
+                grid-template-columns: 1fr;
+            }
+
+            .spotlight-img-wrapper {
+                min-height: 350px;
+            }
+
+            .spotlight-content {
+                padding: 40px;
+            }
+
+            .spotlight-metrics {
+                flex-direction: column;
+                gap: 15px;
+            }
+
+            .projects-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-banner h2 {
+                font-size: 2rem;
+            }
+        }
+
+        @media (max-width: 600px) {
+            .portfolio-hero {
+                padding: 70px 0;
+            }
+
+            .portfolio-hero h1 {
+                font-size: 2rem;
+            }
+
+            .spotlight-title {
+                font-size: 1.6rem;
+            }
+
+            .spotlight-content {
+                padding: 30px 20px;
+            }
+
+            .project-card-body {
+                padding: 25px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header Container -->
+    <header id="header-slot" class="main-header"></header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Portfolio Hero Section -->
+        <section class="portfolio-hero">
+            <div class="container">
+                <span class="portfolio-badge">Our Portfolio</span>
+                <h1>Engineering <span>Digital Growth.</span></h1>
+                <p>Real results for African businesses. From schools to water utilities, see how we transform operations
+                    with cloud-powered solutions.</p>
+            </div>
+        </section>
+
+        <!-- Featured Spotlight - Kabuku Water -->
+        <section class="featured-spotlight">
+            <div class="container">
+                <div class="spotlight-card">
+                    <div class="spotlight-img-wrapper">
+                        <span class="spotlight-badge">⭐ Featured Project</span>
+                        <img src="https://images.unsplash.com/photo-1541960071727-c531398e7494?w=800&q=80"
+                            alt="Kabuku Water - Digital Water Utility Management" class="spotlight-img">
+                    </div>
+                    <div class="spotlight-content">
+                        <span class="spotlight-tag">Water Utility Transformation</span>
+                        <h2 class="spotlight-title">Kabuku Water: From Manual Chaos to 100% Digital</h2>
+                        <p class="spotlight-desc">
+                            Kabuku Water Company was drowning in paper receipts, lost payments, and manual meter
+                            readings. We deployed MajiCloud, our comprehensive water utility management system, and
+                            transformed their entire operation. Today, every meter is digital, every payment is tracked,
+                            and their revenue collection has skyrocketed.
+                        </p>
+                        <div class="spotlight-metrics">
+                            <div class="metric-item">
+                                <span class="metric-value">100%</span>
+                                <span class="metric-label">Cashless System</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">40%</span>
+                                <span class="metric-label">Revenue Increase</span>
+                            </div>
+                            <div class="metric-item">
+                                <span class="metric-value">Zero</span>
+                                <span class="metric-label">Lost Payments</span>
+                            </div>
+                        </div>
+                        <a href="../solutions/majicloud.html" class="spotlight-cta">
+                            Explore MajiCloud →
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Project Grid Section -->
+        <section class="project-grid-section">
+            <div class="container">
+                <div class="project-grid-header">
+                    <span class="section-tag">Success Stories</span>
+                    <h2>More Transformations</h2>
+                </div>
+
+                <div class="projects-grid">
+                    <!-- Kiota School Card -->
+                    <article class="project-card">
+                        <div class="project-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1580582932707-520aed937b7b?w=600&q=80"
+                                alt="Kiota School - Cloud School Management System" class="project-card-img">
+                            <span class="result-tag">📚 Cloud School ERP</span>
+                        </div>
+                        <div class="project-card-body">
+                            <span class="project-category">Education</span>
+                            <h3 class="project-card-title">Kiota School</h3>
+                            <p class="project-card-desc">
+                                Complete school management transformation with digital admissions, automated fee
+                                collection, real-time academic tracking, and parent communication portals.
+                            </p>
+                            <a href="../solutions/cloud-school.html" class="project-link">
+                                Learn More <span>→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- AAK Membership Card -->
+                    <article class="project-card">
+                        <div class="project-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=600&q=80"
+                                alt="AAK - Automobile Association of Kenya Membership System" class="project-card-img">
+                            <span class="result-tag">🚗 Digital Membership</span>
+                        </div>
+                        <div class="project-card-body">
+                            <span class="project-category">Membership Management</span>
+                            <h3 class="project-card-title">AAK Membership Portal</h3>
+                            <p class="project-card-desc">
+                                Modernized the Automobile Association of Kenya's membership system with online renewals,
+                                digital member cards, and integrated roadside assistance tracking.
+                            </p>
+                            <a href="../solutions/shiriki365.html" class="project-link">
+                                Learn More <span>→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Saliout Adventures Card -->
+                    <article class="project-card">
+                        <div class="project-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1516426122078-c23e76319801?w=600&q=80"
+                                alt="Saliout Adventures - Safari Tour Management" class="project-card-img">
+                            <span class="result-tag">🌍 Safari Bookings</span>
+                        </div>
+                        <div class="project-card-body">
+                            <span class="project-category">Tourism & Retail</span>
+                            <h3 class="project-card-title">Saliout Adventures</h3>
+                            <p class="project-card-desc">
+                                End-to-end digital transformation for Kenya's vibrant safari operator. Cloud POS,
+                                inventory management, and seamless booking integration for adventure seekers.
+                            </p>
+                            <a href="../solutions/ikomali.html" class="project-link">
+                                Learn More <span>→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Additional Project Card - Generic Success -->
+                    <article class="project-card">
+                        <div class="project-img-wrapper">
+                            <img src="https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=600&q=80"
+                                alt="SME Retail Solutions - Cloud POS" class="project-card-img">
+                            <span class="result-tag">⚡ Cloud POS</span>
+                        </div>
+                        <div class="project-card-body">
+                            <span class="project-category">Retail & SME</span>
+                            <h3 class="project-card-title">SME Retail Solutions</h3>
+                            <p class="project-card-desc">
+                                Empowering small and medium retailers across Kenya with affordable, cloud-based
+                                point-of-sale systems that track sales, manage inventory, and grow profits.
+                            </p>
+                            <a href="../solutions/ikomali.html" class="project-link">
+                                Learn More <span>→</span>
+                            </a>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Banner -->
+        <section class="cta-banner">
+            <div class="container">
+                <span class="cta-icon">🚀</span>
+                <h2>Have a Challenge We Can Solve?</h2>
+                <p>Let's discuss how our cloud solutions can transform your operations, boost efficiency, and drive
+                    digital growth for your organization.</p>
+                <a href="../contact.html" class="cta-btn">
+                    Start the Conversation <span>→</span>
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer Container -->
+    <footer id="footer-slot" class="footer"></footer>
+
+    <!-- Loader Script -->
+    <script src="../js/loader.js"></script>
+</body>
+
+</html>

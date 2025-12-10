@@ -1,0 +1,533 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IkoMali - Business ERP & POS System | Africa Cloud Space</title>
+    <meta name="description"
+        content="Powerful multi-channel Point of Sale and ERP system. Manage inventory, sales, and finances seamlessly — anywhere, anytime with M-Pesa integration.">
+    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* IkoMali - Growth Green Theme */
+        :root {
+            --iko-primary: #10b981;
+            --iko-secondary: #059669;
+            --iko-dark: #064e3b;
+            --iko-light: #ecfdf5;
+        }
+
+        .iko-hero {
+            background: linear-gradient(135deg, #064e3b 0%, #059669 50%, #10b981 100%);
+            color: #fff;
+            padding: 100px 0 140px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .iko-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .iko-hero::after {
+            content: '';
+            position: absolute;
+            bottom: -10%;
+            right: -10%;
+            width: 50%;
+            height: 60%;
+            background: radial-gradient(circle, rgba(52, 211, 153, 0.2) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .iko-hero .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .iko-badge {
+            background: rgba(52, 211, 153, 0.2);
+            color: #34d399;
+            border: 1px solid #34d399;
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+
+        .iko-hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 25px;
+        }
+
+        .iko-hero h1 span {
+            background: linear-gradient(90deg, #a7f3d0 0%, #34d399 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .iko-hero p {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .iko-btn {
+            background: #fff;
+            color: #059669;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .iko-btn:hover {
+            background: #ecfdf5;
+            transform: translateY(-3px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.25);
+        }
+
+        .iko-btn-outline {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            color: #fff;
+            margin-left: 15px;
+        }
+
+        .iko-btn-outline:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: #fff;
+        }
+
+        .iko-hero-img {
+            border-radius: 20px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+        }
+
+        /* Stats Bar */
+        .stats-bar {
+            background: #fff;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(16, 185, 129, 0.15);
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .stat-item {
+            padding: 20px;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .stat-item:last-child {
+            border-right: none;
+        }
+
+        .stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #059669 0%, #10b981 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        /* Zig-Zag Features */
+        .features-section {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #f8fafc 0%, #ecfdf5 100%);
+        }
+
+        .feature-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+
+        .feature-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .feature-row.reverse {
+            direction: rtl;
+        }
+
+        .feature-row.reverse>* {
+            direction: ltr;
+        }
+
+        .feature-img {
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(16, 185, 129, 0.15);
+            width: 100%;
+        }
+
+        .feature-content {
+            padding: 20px 0;
+        }
+
+        .feature-tag {
+            color: #059669;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .feature-tag i {
+            width: 40px;
+            height: 40px;
+            background: rgba(16, 185, 129, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #10b981;
+        }
+
+        .feature-content h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #064e3b;
+            margin-bottom: 20px;
+        }
+
+        .feature-content p {
+            font-size: 1.05rem;
+            color: #64748b;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .feature-list {
+            list-style: none;
+        }
+
+        .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            color: #475569;
+        }
+
+        .feature-list li i {
+            color: #10b981;
+            margin-top: 4px;
+        }
+
+        /* Final CTA */
+        .cta-section {
+            background: linear-gradient(135deg, #064e3b 0%, #059669 100%);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cta-section::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            right: -50%;
+            width: 100%;
+            height: 200%;
+            background: radial-gradient(circle, rgba(52, 211, 153, 0.15) 0%, transparent 70%);
+            pointer-events: none;
+        }
+
+        .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cta-section h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .cta-section h2 span {
+            color: #34d399;
+        }
+
+        .cta-section p {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.8);
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            background: #fff;
+            color: #059669;
+            padding: 18px 50px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+        }
+
+        .cta-btn:hover {
+            background: #ecfdf5;
+            transform: translateY(-3px);
+        }
+
+        /* Responsive */
+        @media (max-width: 968px) {
+            .iko-hero .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .iko-hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .iko-hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .iko-hero-img {
+                display: none;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .stat-item {
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
+                padding: 25px 0;
+            }
+
+            .stat-item:last-child {
+                border-bottom: none;
+            }
+
+            .feature-row {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .feature-row.reverse {
+                direction: ltr;
+            }
+
+            .feature-content h3 {
+                font-size: 1.6rem;
+            }
+
+            .cta-section h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Dynamic Header -->
+    <header id="header-slot" class="main-header"></header>
+
+    <!-- Hero Section -->
+    <section class="iko-hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-text">
+                    <span class="iko-badge">💰 Business ERP & POS</span>
+                    <h1>Track Your <span>Profit & Stock</span> in Real-Time</h1>
+                    <p>A powerful multi-channel Point of Sale and Enterprise Resource Planning system that helps you
+                        manage inventory, sales, and finances seamlessly — anywhere, anytime.</p>
+                    <div class="hero-btns">
+                        <a href="#demo" class="iko-btn">
+                            <i class="fas fa-rocket"></i> Get Started
+                        </a>
+                        <a href="#features" class="iko-btn iko-btn-outline">
+                            <i class="fas fa-play-circle"></i> Watch Demo
+                        </a>
+                    </div>
+                </div>
+                <div class="hero-img-box">
+                    <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800&h=600&fit=crop"
+                        alt="POS system in African retail store" class="iko-hero-img">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Bar -->
+    <section class="container">
+        <div class="stats-bar">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">1,000+</div>
+                    <div class="stat-label">Businesses Powered</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">Real-Time</div>
+                    <div class="stat-label">Sales & Inventory Reports</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">Multi</div>
+                    <div class="stat-label">Location Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Zig-Zag Features -->
+    <section id="features" class="features-section">
+        <div class="container">
+            <!-- Feature 1: Inventory Management -->
+            <div class="feature-row">
+                <div class="feature-img-box">
+                    <img src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=700&h=500&fit=crop"
+                        alt="Warehouse inventory management" class="feature-img">
+                </div>
+                <div class="feature-content">
+                    <div class="feature-tag">
+                        <i class="fas fa-boxes"></i>
+                        Inventory Management
+                    </div>
+                    <h3>Never Run Out of Stock Again</h3>
+                    <p>Track stock levels across all your locations in real-time. Get automatic alerts when items are
+                        running low and manage reorder points effortlessly.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Real-time stock tracking across branches</li>
+                        <li><i class="fas fa-check-circle"></i> Low stock alerts & reorder suggestions</li>
+                        <li><i class="fas fa-check-circle"></i> Barcode scanning for fast lookups</li>
+                        <li><i class="fas fa-check-circle"></i> Stock transfer between locations</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Feature 2: POS + M-Pesa (Reversed) -->
+            <div class="feature-row reverse">
+                <div class="feature-img-box">
+                    <img src="https://images.unsplash.com/photo-1556742521-9713bf272865?w=700&h=500&fit=crop"
+                        alt="Point of sale transaction" class="feature-img">
+                </div>
+                <div class="feature-content">
+                    <div class="feature-tag">
+                        <i class="fas fa-cash-register"></i>
+                        POS + M-Pesa
+                    </div>
+                    <h3>Fast Checkout with Integrated Payments</h3>
+                    <p>Accept cash, M-Pesa, and card payments from one terminal. Transactions sync instantly to your
+                        accounts with no manual entry needed.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Touch-friendly POS interface</li>
+                        <li><i class="fas fa-check-circle"></i> Integrated M-Pesa & Till payments</li>
+                        <li><i class="fas fa-check-circle"></i> Automatic receipt printing & SMS</li>
+                        <li><i class="fas fa-check-circle"></i> Split payment support</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Feature 3: Sales Analytics -->
+            <div class="feature-row">
+                <div class="feature-img-box">
+                    <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=700&h=500&fit=crop"
+                        alt="Business analytics dashboard" class="feature-img">
+                </div>
+                <div class="feature-content">
+                    <div class="feature-tag">
+                        <i class="fas fa-chart-line"></i>
+                        Sales Analytics
+                    </div>
+                    <h3>Know Your Numbers, Grow Your Business</h3>
+                    <p>Get instant insights into your best-selling products, peak hours, and profit margins. Make
+                        data-driven decisions with beautiful, easy-to-read dashboards.</p>
+                    <ul class="feature-list">
+                        <li><i class="fas fa-check-circle"></i> Daily, weekly, monthly sales reports</li>
+                        <li><i class="fas fa-check-circle"></i> Product performance analytics</li>
+                        <li><i class="fas fa-check-circle"></i> Staff performance tracking</li>
+                        <li><i class="fas fa-check-circle"></i> Profit margin analysis</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section id="demo" class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Ready to <span>Grow Your Business</span>?</h2>
+                <p>Join thousands of SMEs across Africa using IkoMali to streamline operations, increase sales, and
+                    maximize profits.</p>
+                <a href="#" class="cta-btn">
+                    <i class="fas fa-calendar-check"></i> Book a Free Demo
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Dynamic Footer -->
+    <footer id="footer-slot" class="footer"></footer>
+
+    <!-- Global Loader -->
+    <script src="../js/loader.js"></script>
+</body>
+
+</html>
