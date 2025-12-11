@@ -1,0 +1,93 @@
+<style>
+    .about-hero {
+        background:
+            linear-gradient(135deg, rgba(2, 26, 46, 0.92) 0%, rgba(10, 61, 92, 0.88) 100%),
+            url('https://images.unsplash.com/photo-1611348586804-61bf6c080437?w=1600&h=900&fit=crop') center/cover;
+        color: #fff;
+        padding: 140px 0 120px;
+        text-align: center;
+        position: relative;
+    }
+
+    .about-hero::before {
+        content: '';
+        position: absolute;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 100px;
+        background: linear-gradient(to top, #fff, transparent);
+        pointer-events: none;
+    }
+
+    .about-hero .hero-inner {
+        max-width: 850px;
+        margin: 0 auto;
+        position: relative;
+        z-index: 2;
+    }
+
+    .about-hero .hero-badge {
+        background: rgba(16, 185, 129, 0.2);
+        border: 1px solid rgba(16, 185, 129, 0.4);
+        color: #34d399;
+        padding: 10px 24px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        display: inline-block;
+        margin-bottom: 25px;
+    }
+
+    .about-hero h1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 3.2rem;
+        font-weight: 800;
+        line-height: 1.15;
+        margin-bottom: 25px;
+    }
+
+    .about-hero h1 span {
+        background: linear-gradient(90deg, #00b4d8, #10b981);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .about-hero .hero-sub {
+        font-size: 1.25rem;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.7;
+        max-width: 700px;
+        margin: 0 auto;
+    }
+
+    @media (max-width: 768px) {
+        .about-hero {
+            padding: 100px 0 80px;
+        }
+
+        .about-hero h1 {
+            font-size: 2rem;
+        }
+
+        .about-hero .hero-sub {
+            font-size: 1rem;
+        }
+    }
+</style>
+
+<section class="about-hero">
+    <div class="container">
+        <div class="hero-inner">
+            <span class="hero-badge">About Africa Cloud Space</span>
+            <h1>Transforming Organizations Through <span>Cloud Power</span></h1>
+            <p class="hero-sub">
+                Empowering enterprises across Africa with secure software that fuels
+                efficiency, growth, and innovation. Built for the way Africa works.
+            </p>
+        </div>
+    </div>
+</section>

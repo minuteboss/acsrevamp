@@ -1,0 +1,158 @@
+<style>
+    .values-section {
+        padding: 100px 0;
+        background: #f8fafc;
+    }
+
+    .values-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .values-header .section-tag {
+        color: #0077b6;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+        display: block;
+    }
+
+    .values-header .section-title {
+        font-family: 'Poppins', sans-serif;
+        font-size: 2.2rem;
+        color: #021a2e;
+        font-weight: 700;
+    }
+
+    .values-grid {
+        display: grid;
+        grid-template-columns: repeat(5, 1fr);
+        gap: 20px;
+    }
+
+    .value-card {
+        background: #fff;
+        border: 1px solid #e2e8f0;
+        border-radius: 16px;
+        padding: 30px 20px;
+        text-align: center;
+        transition: all 0.3s ease;
+    }
+
+    .value-card:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+    }
+
+    .value-icon {
+        width: 60px;
+        height: 60px;
+        border-radius: 16px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0 auto 18px;
+        font-size: 24px;
+    }
+
+    .value-card:nth-child(1) .value-icon {
+        background: #dbeafe;
+        color: #1d4ed8;
+    }
+
+    .value-card:nth-child(2) .value-icon {
+        background: #d1fae5;
+        color: #059669;
+    }
+
+    .value-card:nth-child(3) .value-icon {
+        background: #fef3c7;
+        color: #b45309;
+    }
+
+    .value-card:nth-child(4) .value-icon {
+        background: #ede9fe;
+        color: #7c3aed;
+    }
+
+    .value-card:nth-child(5) .value-icon {
+        background: #fce7f3;
+        color: #be185d;
+    }
+
+    .value-card h4 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 0.95rem;
+        color: #021a2e;
+        margin-bottom: 8px;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        font-weight: 700;
+    }
+
+    .value-card p {
+        color: #64748b;
+        font-size: 0.85rem;
+        line-height: 1.5;
+    }
+
+    @media (max-width: 1024px) {
+        .values-grid {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .values-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .values-header .section-title {
+            font-size: 1.8rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .values-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<section class="values-section">
+    <div class="container">
+        <div class="values-header">
+            <span class="section-tag">What We Uphold</span>
+            <h2 class="section-title">Our Core Values</h2>
+        </div>
+        <div class="values-grid">
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-shield-alt"></i></div>
+                <h4>Security</h4>
+                <p>Bank-grade data protection.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-server"></i></div>
+                <h4>Reliability</h4>
+                <p>Consistent uptime and redundancy.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-handshake"></i></div>
+                <h4>Integrity</h4>
+                <p>Ethical standards and transparency.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-lightbulb"></i></div>
+                <h4>Innovation</h4>
+                <p>Constantly evolving to meet market needs.</p>
+            </div>
+            <div class="value-card">
+                <div class="value-icon"><i class="fas fa-feather-alt"></i></div>
+                <h4>Simplicity</h4>
+                <p>User-friendly design and functionality.</p>
+            </div>
+        </div>
+    </div>
+</section>

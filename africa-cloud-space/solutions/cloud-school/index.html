@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cloud School - School Management System | Africa Cloud Space</title>
+    <meta name="description"
+        content="Comprehensive school management platform. Automate administration, academics, finance, and communication – all from one cloud-based system.">
+    <!-- Root Relative Paths for Assets -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <!-- FontAwesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Global Header Slot -->
+    <header id="header-slot" class="main-header"></header>
+
+    <!-- Main Content Aggregator -->
+    <main>
+        <div id="hero-slot"></div>
+        <div id="stats-slot"></div>
+        <div id="features-slot"></div>
+        <div id="cta-slot"></div>
+    </main>
+
+    <!-- Global Footer Slot -->
+    <footer id="footer-slot" class="footer"></footer>
+
+    <!-- Loader Script -->
+    <script src="/js/loader.js"></script>
+
+    <!-- Local Page Logic -->
+    <script>
+        // Load Global Elements
+        loadComponent('header-slot', '/header.html');
+        loadComponent('footer-slot', '/footer.html');
+
+        // Load Local Sections
+        loadComponent('hero-slot', '/solutions/cloud-school/hero.html');
+        loadComponent('stats-slot', '/solutions/cloud-school/stats.html');
+        loadComponent('features-slot', '/solutions/cloud-school/features.html');
+        loadComponent('cta-slot', '/solutions/cloud-school/cta.html');
+    </script>
+
+</body>
+
+</html>

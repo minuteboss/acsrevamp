@@ -1,0 +1,85 @@
+<!-- Cloud School CTA Section -->
+<section id="demo" class="cs-cta">
+    <style>
+        .cs-cta {
+            background: linear-gradient(135deg, #021a2e 0%, #0a3d62 100%);
+            padding: 100px 0;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .cs-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: radial-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+            background-size: 25px 25px;
+            pointer-events: none;
+        }
+
+        .cs-cta .cta-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        .cs-cta h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #fff;
+            margin-bottom: 20px;
+        }
+
+        .cs-cta h2 span {
+            color: #00b4d8;
+        }
+
+        .cs-cta p {
+            font-size: 1.15rem;
+            color: #94a3b8;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cs-cta .cta-btn {
+            background: #0077b6;
+            color: #fff;
+            padding: 18px 50px;
+            border-radius: 50px;
+            font-weight: 700;
+            font-size: 1.1rem;
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            box-shadow: 0 10px 40px rgba(0, 119, 182, 0.4);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .cs-cta .cta-btn:hover {
+            background: #00b4d8;
+            transform: translateY(-3px);
+        }
+
+        @media (max-width: 768px) {
+            .cs-cta h2 {
+                font-size: 2rem;
+            }
+        }
+    </style>
+    <div class="container">
+        <div class="cta-content">
+            <h2>Ready to Transform Your <span>School Management</span>?</h2>
+            <p>Join hundreds of schools across Africa already using Cloud School to reduce admin workload and improve
+                parent satisfaction.</p>
+            <a href="/contact.html" class="cta-btn">
+                <i class="fas fa-calendar-check"></i> Book a Free Demo
+            </a>
+        </div>
+    </div>
+</section>

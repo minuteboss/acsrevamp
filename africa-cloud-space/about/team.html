@@ -1,0 +1,180 @@
+<style>
+    .team-section {
+        padding: 100px 0;
+        background: #fff;
+    }
+
+    .team-header {
+        text-align: center;
+        margin-bottom: 60px;
+    }
+
+    .team-header .section-tag {
+        color: #0077b6;
+        font-weight: 700;
+        text-transform: uppercase;
+        font-size: 0.8rem;
+        letter-spacing: 2px;
+        margin-bottom: 12px;
+        display: block;
+    }
+
+    .team-header .section-title {
+        font-family: 'Poppins', sans-serif;
+        font-size: 2.2rem;
+        color: #021a2e;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+
+    .team-subtitle {
+        color: #64748b;
+        font-size: 1rem;
+    }
+
+    .team-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 35px;
+        max-width: 1000px;
+        margin: 0 auto;
+    }
+
+    .team-card {
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+
+    .team-card:hover {
+        transform: translateY(-8px);
+    }
+
+    .team-photo {
+        width: 130px;
+        height: 130px;
+        border-radius: 50%;
+        margin: 0 auto 18px;
+        overflow: hidden;
+        background: linear-gradient(135deg, #e2e8f0, #cbd5e1);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 4px solid #fff;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        transition: all 0.3s ease;
+    }
+
+    .team-card:hover .team-photo {
+        border-color: #00b4d8;
+        box-shadow: 0 15px 40px rgba(0, 180, 216, 0.2);
+    }
+
+    .team-photo img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .team-photo i {
+        font-size: 2.5rem;
+        color: #94a3b8;
+    }
+
+    .team-card h3 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.05rem;
+        color: #021a2e;
+        margin-bottom: 5px;
+        font-weight: 700;
+    }
+
+    .team-role {
+        color: #00b4d8;
+        font-size: 0.85rem;
+        font-weight: 600;
+        line-height: 1.4;
+    }
+
+    @media (max-width: 1024px) {
+        .team-grid {
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .team-grid {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        .team-header .section-title {
+            font-size: 1.8rem;
+        }
+    }
+
+    @media (max-width: 480px) {
+        .team-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+</style>
+
+<section class="team-section">
+    <div class="container">
+        <div class="team-header">
+            <span class="section-tag">Our People</span>
+            <h2 class="section-title">Meet the Builders</h2>
+            <p class="team-subtitle">Directors, Strategists & Technical Experts</p>
+        </div>
+        <div class="team-grid">
+            <!-- Row 1 -->
+            <div class="team-card">
+                <div class="team-photo"><i class="fas fa-user-tie"></i></div>
+                <h3>Joseph Wanjau</h3>
+                <p class="team-role">CEO</p>
+            </div>
+            <div class="team-card">
+                <div class="team-photo"><i class="fas fa-user-tie"></i></div>
+                <h3>Ann Njoki</h3>
+                <p class="team-role">COO</p>
+            </div>
+            <div class="team-card">
+                <div class="team-photo"><i class="fas fa-user-cog"></i></div>
+                <h3>Brian Kiprop</h3>
+                <p class="team-role">Team Lead - Systems Development</p>
+            </div>
+            <!-- Row 2 -->
+            <div class="team-card">
+                <div class="team-photo"><i class="fas fa-user-tie"></i></div>
+                <h3>Grace Ndung'u</h3>
+                <p class="team-role">Head of Business Dev</p>
+            </div>
+            <div class="team-card">
+                <div class="team-photo"><i class="fas fa-user-graduate"></i></div>
+                <h3>Juliet Mutinda</h3>
+                <p class="team-role">Head of Cloud School Dev</p>
+            </div>
+            <div class="team-card">
+                <div class="team-photo"><i class="fas fa-user-cog"></i></div>
+                <h3>Mayeku Khisa</h3>
+                <p class="team-role">Head of R&D, API & Fintech</p>
+            </div>
+            <!-- Row 3 -->
+            <div class="team-card">
+                <div class="team-photo"><i class="fas fa-calculator"></i></div>
+                <h3>Caroline Wambui</h3>
+                <p class="team-role">Head of Accounts</p>
+            </div>
+            <div class="team-card">
+                <div class="team-photo"><i class="fas fa-tasks"></i></div>
+                <h3>Salome Maina</h3>
+                <p class="team-role">Head of Implementations</p>
+            </div>
+            <div class="team-card">
+                <div class="team-photo"><i class="fas fa-headset"></i></div>
+                <h3>Liz Irungu</h3>
+                <p class="team-role">Head of Customer Service</p>
+            </div>
+        </div>
+    </div>
+</section>

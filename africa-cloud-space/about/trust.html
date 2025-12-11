@@ -1,0 +1,65 @@
+<style>
+    .trust-section {
+        padding: 70px 0;
+        background: linear-gradient(135deg, #021a2e 0%, #0a3d5c 100%);
+    }
+
+    .trust-grid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 50px;
+        text-align: center;
+    }
+
+    .trust-item {
+        color: #fff;
+    }
+
+    .trust-number {
+        font-family: 'Poppins', sans-serif;
+        font-size: 3.5rem;
+        font-weight: 800;
+        color: #00b4d8;
+        line-height: 1;
+        margin-bottom: 10px;
+    }
+
+    .trust-number span {
+        font-size: 2rem;
+    }
+
+    .trust-label {
+        color: rgba(255, 255, 255, 0.7);
+        font-size: 1rem;
+    }
+
+    @media (max-width: 768px) {
+        .trust-grid {
+            grid-template-columns: 1fr;
+            gap: 35px;
+        }
+
+        .trust-number {
+            font-size: 2.8rem;
+        }
+    }
+</style>
+
+<section class="trust-section">
+    <div class="container">
+        <div class="trust-grid">
+            <div class="trust-item">
+                <div class="trust-number">300<span>+</span></div>
+                <div class="trust-label">Partner Organizations</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">20k<span>+</span></div>
+                <div class="trust-label">Active Users</div>
+            </div>
+            <div class="trust-item">
+                <div class="trust-number">100<span>%</span></div>
+                <div class="trust-label">Kenyan Owned</div>
+            </div>
+        </div>
+    </div>
+</section>

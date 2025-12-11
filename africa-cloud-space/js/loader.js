@@ -4,7 +4,7 @@ async function loadComponent(id, file) {
         if (response.ok) {
             const text = await response.text();
             document.getElementById(id).innerHTML = text;
-            
+
             // Execute any scripts found in the loaded content (optional but good for robustness)
             const scripts = document.getElementById(id).querySelectorAll("script");
             scripts.forEach(oldScript => {
@@ -23,9 +23,9 @@ async function loadComponent(id, file) {
 
 // Function to initialize the specific page
 function initPage() {
-    // 1. Load Global Elements
-    loadComponent('header-slot', 'header.html');
-    loadComponent('footer-slot', 'footer.html');
+    // 1. Load Global Elements (use absolute paths for subpages)
+    loadComponent('header-slot', '/header.html');
+    loadComponent('footer-slot', '/footer.html');
 
     // 2. Load Page Content (Check if we are on home)
     const mainSlot = document.getElementById('main-slot');

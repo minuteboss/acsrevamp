@@ -1,0 +1,239 @@
+<style>
+    .form-map-section {
+        padding: 80px 0;
+        background: #fff;
+    }
+
+    .form-map-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 60px;
+        align-items: start;
+    }
+
+    /* Form Styles */
+    .contact-form-wrapper {
+        background: #f8fafc;
+        border: 1px solid #e2e8f0;
+        border-radius: 24px;
+        padding: 40px;
+    }
+
+    .contact-form-wrapper h2 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.5rem;
+        color: #021a2e;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+
+    .contact-form-wrapper .form-subtitle {
+        color: #64748b;
+        margin-bottom: 30px;
+        font-size: 0.95rem;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group label {
+        display: block;
+        font-weight: 600;
+        color: #334155;
+        margin-bottom: 8px;
+        font-size: 0.9rem;
+    }
+
+    .form-group input,
+    .form-group select,
+    .form-group textarea {
+        width: 100%;
+        padding: 14px 18px;
+        border: 1px solid #e2e8f0;
+        border-radius: 12px;
+        font-size: 1rem;
+        font-family: 'Inter', sans-serif;
+        transition: all 0.3s ease;
+        background: #fff;
+    }
+
+    .form-group input:focus,
+    .form-group select:focus,
+    .form-group textarea:focus {
+        outline: none;
+        border-color: #00b4d8;
+        box-shadow: 0 0 0 4px rgba(0, 180, 216, 0.1);
+    }
+
+    .form-group textarea {
+        min-height: 120px;
+        resize: vertical;
+    }
+
+    .form-row {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+    }
+
+    .btn-submit {
+        background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);
+        color: #fff;
+        padding: 16px 40px;
+        border: none;
+        border-radius: 50px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 1rem;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        width: 100%;
+        justify-content: center;
+    }
+
+    .btn-submit:hover {
+        transform: translateY(-2px);
+        box-shadow: 0 15px 30px rgba(0, 119, 182, 0.3);
+    }
+
+    /* Map Styles */
+    .map-wrapper {
+        border-radius: 24px;
+        overflow: hidden;
+        box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+    }
+
+    .map-wrapper h2 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 1.3rem;
+        color: #021a2e;
+        margin-bottom: 20px;
+        font-weight: 700;
+    }
+
+    .map-container {
+        border-radius: 20px;
+        overflow: hidden;
+        border: 1px solid #e2e8f0;
+    }
+
+    .map-container iframe {
+        width: 100%;
+        height: 450px;
+        border: none;
+    }
+
+    .map-details {
+        background: #f8fafc;
+        padding: 25px;
+        border-radius: 0 0 20px 20px;
+        border: 1px solid #e2e8f0;
+        border-top: none;
+    }
+
+    .map-details h4 {
+        font-family: 'Poppins', sans-serif;
+        color: #021a2e;
+        font-size: 1rem;
+        margin-bottom: 10px;
+    }
+
+    .map-details p {
+        color: #64748b;
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    @media (max-width: 1024px) {
+        .form-map-grid {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .form-row {
+            grid-template-columns: 1fr;
+        }
+
+        .contact-form-wrapper {
+            padding: 30px 20px;
+        }
+    }
+</style>
+
+<section class="form-map-section" id="map">
+    <div class="container">
+        <div class="form-map-grid">
+            <!-- Contact Form -->
+            <div class="contact-form-wrapper">
+                <h2>Send Us a Message</h2>
+                <p class="form-subtitle">Fill out the form below and we'll get back to you within 24 hours.</p>
+
+                <form action="#" method="POST">
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="name">Full Name *</label>
+                            <input type="text" id="name" name="name" placeholder="John Kamau" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email Address *</label>
+                            <input type="email" id="email" name="email" placeholder="john@company.co.ke" required>
+                        </div>
+                    </div>
+
+                    <div class="form-row">
+                        <div class="form-group">
+                            <label for="phone">Phone Number</label>
+                            <input type="tel" id="phone" name="phone" placeholder="+254 7XX XXX XXX">
+                        </div>
+                        <div class="form-group">
+                            <label for="interest">I'm Interested In *</label>
+                            <select id="interest" name="interest" required>
+                                <option value="">Select a product/service</option>
+                                <option value="cloud-school">Cloud School (Schools)</option>
+                                <option value="majicloud">MajiCloud (Water Utilities)</option>
+                                <option value="shiriki365">Shiriki365 (Associations)</option>
+                                <option value="ikomali">IkoMali (Business/Retail)</option>
+                                <option value="enterprise">Enterprise Solutions</option>
+                                <option value="other">Other / General Inquiry</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="message">Your Message *</label>
+                        <textarea id="message" name="message"
+                            placeholder="Tell us about your project or ask us anything..." required></textarea>
+                    </div>
+
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-paper-plane"></i> Send Message
+                    </button>
+                </form>
+            </div>
+
+            <!-- Map -->
+            <div class="map-wrapper">
+                <h2>Find Us in Nairobi</h2>
+                <div class="map-container">
+                    <iframe
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3988.9034848542!2d36.8748!3d-1.2241!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f10d0b3b3b3b3%3A0x1234567890abcdef!2sGarden%20Estate%20Road%2C%20Nairobi!5e0!3m2!1sen!2ske!4v1234567890"
+                        allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+                <div class="map-details">
+                    <h4>Africa Cloud Space Ltd.</h4>
+                    <p>
+                        Mukima Drive, Garden Estate Road<br>
+                        Thika Road, Suite 007<br>
+                        Nairobi, Kenya
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

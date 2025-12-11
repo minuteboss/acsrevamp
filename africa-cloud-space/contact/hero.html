@@ -1,0 +1,91 @@
+<style>
+    .contact-hero {
+        background: linear-gradient(135deg, #021a2e 0%, #0a3d5c 100%);
+        color: #fff;
+        padding: 120px 0 100px;
+        text-align: center;
+        position: relative;
+    }
+
+    .contact-hero::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background:
+            radial-gradient(circle at 30% 70%, rgba(0, 180, 216, 0.1) 0%, transparent 50%),
+            radial-gradient(circle at 70% 30%, rgba(16, 185, 129, 0.08) 0%, transparent 40%);
+        pointer-events: none;
+    }
+
+    .contact-hero .hero-inner {
+        position: relative;
+        z-index: 2;
+        max-width: 800px;
+        margin: 0 auto;
+    }
+
+    .contact-hero .hero-badge {
+        background: rgba(0, 180, 216, 0.2);
+        border: 1px solid rgba(0, 180, 216, 0.4);
+        color: #00b4d8;
+        padding: 10px 24px;
+        border-radius: 50px;
+        font-size: 0.8rem;
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        display: inline-block;
+        margin-bottom: 25px;
+    }
+
+    .contact-hero h1 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 3rem;
+        font-weight: 800;
+        line-height: 1.15;
+        margin-bottom: 20px;
+    }
+
+    .contact-hero h1 span {
+        background: linear-gradient(90deg, #00b4d8, #10b981);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+    }
+
+    .contact-hero .hero-sub {
+        font-size: 1.2rem;
+        color: rgba(255, 255, 255, 0.8);
+        line-height: 1.7;
+    }
+
+    @media (max-width: 768px) {
+        .contact-hero {
+            padding: 80px 0 70px;
+        }
+
+        .contact-hero h1 {
+            font-size: 2rem;
+        }
+
+        .contact-hero .hero-sub {
+            font-size: 1rem;
+        }
+    }
+</style>
+
+<section class="contact-hero">
+    <div class="container">
+        <div class="hero-inner">
+            <span class="hero-badge"><i class="fas fa-comments"></i> Get in Touch</span>
+            <h1>Ready to Transform Your Operations? <span>Let's Talk.</span></h1>
+            <p class="hero-sub">
+                Whether you need a cloud solution, custom software, or digital strategy advice,
+                our team is ready to help you succeed.
+            </p>
+        </div>
+    </div>
+</section>

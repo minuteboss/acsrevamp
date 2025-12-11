@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="About Africa Cloud Space - East Africa's #1 Cloud Partner transforming organizations through secure cloud solutions.">
+    <title>About Us | Africa Cloud Space</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Poppins:wght@500;600;700;800&display=swap"
+        rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <!-- Global Stylesheet -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+
+<body>
+    <!-- Header Container -->
+    <header id="header-slot" class="main-header"></header>
+
+    <!-- About Content Container -->
+    <main id="about-content">
+        <div id="about-hero"></div>
+        <div id="about-mission"></div>
+        <div id="about-values"></div>
+        <div id="about-team"></div>
+        <div id="about-trust"></div>
+    </main>
+
+    <!-- Footer Container -->
+    <footer id="footer-slot" class="footer"></footer>
+
+    <!-- Loader Script -->
+    <script src="/js/loader.js"></script>
+    <script>
+        // Load about page partials
+        loadComponent('about-hero', '/about/hero.html');
+        loadComponent('about-mission', '/about/mission.html');
+        loadComponent('about-values', '/about/values.html');
+        loadComponent('about-team', '/about/team.html');
+        loadComponent('about-trust', '/about/trust.html');
+    </script>
+</body>
+
+</html>

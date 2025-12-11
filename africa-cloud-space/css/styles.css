@@ -69,6 +69,35 @@ main {
     z-index: 50;
 }
 
+/* --- LOGO UPDATES --- */
+
+/* Reset default link styles for logo */
+.logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+}
+
+/* Header Logo Dimensions */
+.header-logo-img {
+    height: 50px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+}
+
+/* Footer Logo Dimensions */
+.footer-logo-img {
+    height: 70px;
+    width: auto;
+    object-fit: contain;
+    display: block;
+    margin-bottom: 20px;
+}
+
+/* Optional: If the logo text is dark and invisible on the dark footer */
+/* .footer-logo-img { filter: brightness(0) invert(1); } */
+
 h1,
 h2,
 h3,

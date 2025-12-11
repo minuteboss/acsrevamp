@@ -1,0 +1,154 @@
+<style>
+    .mission-section {
+        padding: 100px 0;
+        background: #fff;
+    }
+
+    .mission-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 80px;
+        align-items: center;
+    }
+
+    .mission-image {
+        position: relative;
+    }
+
+    .mission-image img {
+        width: 100%;
+        border-radius: 24px;
+        box-shadow: 0 30px 60px rgba(0, 0, 0, 0.12);
+    }
+
+    .mission-image::before {
+        content: '';
+        position: absolute;
+        top: -20px;
+        left: -20px;
+        right: 20px;
+        bottom: 20px;
+        background: linear-gradient(135deg, rgba(0, 180, 216, 0.1), rgba(16, 185, 129, 0.1));
+        border-radius: 24px;
+        z-index: -1;
+    }
+
+    .mission-badge {
+        position: absolute;
+        bottom: -20px;
+        right: -20px;
+        background: linear-gradient(135deg, #00b4d8 0%, #0077b6 100%);
+        color: #fff;
+        padding: 18px 28px;
+        border-radius: 16px;
+        font-family: 'Poppins', sans-serif;
+        font-weight: 700;
+        font-size: 1rem;
+        box-shadow: 0 15px 40px rgba(0, 119, 182, 0.3);
+    }
+
+    .mission-content h2 {
+        font-family: 'Poppins', sans-serif;
+        font-size: 2.2rem;
+        font-weight: 800;
+        color: var(--brand-navy, #021a2e);
+        margin-bottom: 15px;
+        line-height: 1.2;
+    }
+
+    .mission-content h2 span {
+        color: #0077b6;
+    }
+
+    .mission-subtitle {
+        font-size: 1.1rem;
+        color: #0077b6;
+        font-weight: 600;
+        margin-bottom: 25px;
+    }
+
+    .mission-text {
+        color: #475569;
+        font-size: 1.05rem;
+        line-height: 1.9;
+    }
+
+    .mission-text p {
+        margin-bottom: 20px;
+    }
+
+    .mission-list {
+        list-style: none;
+        margin: 25px 0;
+        padding: 0;
+    }
+
+    .mission-list li {
+        display: flex;
+        align-items: flex-start;
+        gap: 12px;
+        padding: 10px 0;
+        color: #334155;
+        font-size: 0.95rem;
+    }
+
+    .mission-list li i {
+        color: #10b981;
+        font-size: 16px;
+        margin-top: 4px;
+    }
+
+    @media (max-width: 1024px) {
+        .mission-grid {
+            grid-template-columns: 1fr;
+            gap: 50px;
+        }
+
+        .mission-badge {
+            position: static;
+            display: inline-block;
+            margin-top: 20px;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .mission-content h2 {
+            font-size: 1.8rem;
+        }
+    }
+</style>
+
+<section class="mission-section">
+    <div class="container">
+        <div class="mission-grid">
+            <div class="mission-image">
+                <img src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop"
+                    alt="Africa Cloud Space Team Collaborating">
+                <div class="mission-badge">🇰🇪 100% Kenyan Owned</div>
+            </div>
+            <div class="mission-content">
+                <h2>We Are the <span>#1 Cloud Partner</span> in East Africa</h2>
+                <p class="mission-subtitle">Simplifying complexity. Elevating service delivery.</p>
+                <div class="mission-text">
+                    <p>
+                        Our systems simplify complexity, boost collaboration, and elevate
+                        service delivery for schools, water utilities, SACCOs, and businesses
+                        across Kenya and beyond.
+                    </p>
+                    <p>
+                        We don't just build software. We build partnerships. Every solution
+                        we deliver is designed with deep understanding of African business
+                        realities—M-Pesa integration, offline-first capability, and SMS-based
+                        communication built right in.
+                    </p>
+                </div>
+                <ul class="mission-list">
+                    <li><i class="fas fa-check-circle"></i> M-Pesa native integration across all platforms</li>
+                    <li><i class="fas fa-check-circle"></i> Offline-first design for unreliable connectivity</li>
+                    <li><i class="fas fa-check-circle"></i> SMS alerts and notifications built-in</li>
+                    <li><i class="fas fa-check-circle"></i> Local customer support in Nairobi</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

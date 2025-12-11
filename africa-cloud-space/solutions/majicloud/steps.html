@@ -1,0 +1,149 @@
+<!-- MajiCloud Steps Section (Snap -> SMS -> Pay) -->
+<section id="steps" class="maji-steps">
+    <style>
+        .maji-steps {
+            padding: 100px 0;
+            background: #fff;
+        }
+
+        .maji-steps .section-header {
+            text-align: center;
+            margin-bottom: 70px;
+        }
+
+        .maji-steps .section-tag {
+            color: #0077b6;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 2px;
+            margin-bottom: 15px;
+            display: block;
+        }
+
+        .maji-steps .section-title {
+            font-size: 2.5rem;
+            color: #021a2e;
+            font-weight: 700;
+        }
+
+        .maji-steps .steps-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            position: relative;
+        }
+
+        .maji-steps .steps-grid::before {
+            content: '';
+            position: absolute;
+            top: 80px;
+            left: 20%;
+            right: 20%;
+            height: 3px;
+            background: linear-gradient(90deg, #0077b6 0%, #00b4d8 100%);
+            z-index: 1;
+        }
+
+        .maji-steps .step-card {
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .maji-steps .step-icon {
+            width: 120px;
+            height: 120px;
+            background: linear-gradient(135deg, #0077b6 0%, #00b4d8 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 48px;
+            color: #fff;
+            margin: 0 auto 30px auto;
+            box-shadow: 0 15px 40px rgba(0, 119, 182, 0.3);
+            border: 5px solid #fff;
+        }
+
+        .maji-steps .step-number {
+            position: absolute;
+            top: 0;
+            right: calc(50% - 70px);
+            width: 35px;
+            height: 35px;
+            background: #021a2e;
+            color: #fff;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.9rem;
+        }
+
+        .maji-steps .step-card h3 {
+            font-size: 1.5rem;
+            color: #021a2e;
+            margin-bottom: 15px;
+            font-weight: 700;
+        }
+
+        .maji-steps .step-card p {
+            color: #64748b;
+            font-size: 1rem;
+            line-height: 1.7;
+            max-width: 300px;
+            margin: 0 auto;
+        }
+
+        @media (max-width: 968px) {
+            .maji-steps .steps-grid {
+                grid-template-columns: 1fr;
+                gap: 60px;
+            }
+
+            .maji-steps .steps-grid::before {
+                display: none;
+            }
+        }
+    </style>
+    <div class="container">
+        <div class="section-header">
+            <span class="section-tag">How It Works</span>
+            <h2 class="section-title">3 Simple Steps to Better Revenue</h2>
+        </div>
+        <div class="steps-grid">
+            <!-- Step 1: Snap -->
+            <div class="step-card">
+                <span class="step-number">1</span>
+                <div class="step-icon">
+                    <i class="fas fa-camera"></i>
+                </div>
+                <h3>Snap</h3>
+                <p>Field officers capture meter readings with GPS location and photo evidence using our mobile app.</p>
+            </div>
+
+            <!-- Step 2: SMS -->
+            <div class="step-card">
+                <span class="step-number">2</span>
+                <div class="step-icon">
+                    <i class="fas fa-sms"></i>
+                </div>
+                <h3>SMS</h3>
+                <p>Customers receive instant SMS bills with exact amounts and convenient M-Pesa payment instructions.
+                </p>
+            </div>
+
+            <!-- Step 3: Pay -->
+            <div class="step-card">
+                <span class="step-number">3</span>
+                <div class="step-icon">
+                    <i class="fas fa-mobile-alt"></i>
+                </div>
+                <h3>Pay</h3>
+                <p>Payments via M-Pesa are automatically reconciled with customer accounts in real-time.</p>
+            </div>
+        </div>
+    </div>
+</section>

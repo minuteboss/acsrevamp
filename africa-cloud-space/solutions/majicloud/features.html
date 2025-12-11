@@ -1,0 +1,145 @@
+<!-- MajiCloud Features Section -->
+<section class="maji-features">
+    <style>
+        .maji-features {
+            padding: 100px 0;
+            background: linear-gradient(180deg, #f8fafc 0%, #e0f7fa 100%);
+        }
+
+        .maji-features .feature-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 80px;
+        }
+
+        .maji-features .feature-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .maji-features .feature-row.reverse {
+            direction: rtl;
+        }
+
+        .maji-features .feature-row.reverse>* {
+            direction: ltr;
+        }
+
+        .maji-features .feature-img {
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 119, 182, 0.15);
+            width: 100%;
+        }
+
+        .maji-features .feature-content {
+            padding: 20px 0;
+        }
+
+        .maji-features .feature-tag {
+            color: #0077b6;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .maji-features .feature-tag i {
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 119, 182, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .maji-features .feature-content h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #023e8a;
+            margin-bottom: 20px;
+        }
+
+        .maji-features .feature-content p {
+            font-size: 1.05rem;
+            color: #64748b;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .maji-features .feature-list {
+            list-style: none;
+        }
+
+        .maji-features .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            color: #475569;
+        }
+
+        .maji-features .feature-list li i {
+            color: #00b4d8;
+            margin-top: 4px;
+        }
+
+        @media (max-width: 968px) {
+            .maji-features .feature-row {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .maji-features .feature-row.reverse {
+                direction: ltr;
+            }
+        }
+    </style>
+    <div class="container">
+        <!-- Feature 1 -->
+        <div class="feature-row">
+            <div class="feature-img-box">
+                <img src="https://images.unsplash.com/photo-1504328345606-18bbc8c9d7d1?w=700&h=500&fit=crop"
+                    alt="Water meter reading" class="feature-img">
+            </div>
+            <div class="feature-content">
+                <div class="feature-tag"><i class="fas fa-tachometer-alt"></i> Meter Management</div>
+                <h3>Digital Meter Reading with GPS</h3>
+                <p>Replace paper-based reading with our mobile app. Field officers capture readings with GPS coordinates
+                    and photos.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> Mobile app for field meter readers</li>
+                    <li><i class="fas fa-check-circle"></i> GPS location stamping on each reading</li>
+                    <li><i class="fas fa-check-circle"></i> Photo evidence for dispute resolution</li>
+                    <li><i class="fas fa-check-circle"></i> Offline mode for remote areas</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="feature-row reverse">
+            <div class="feature-img-box">
+                <img src="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=700&h=500&fit=crop"
+                    alt="Mobile payment" class="feature-img">
+            </div>
+            <div class="feature-content">
+                <div class="feature-tag"><i class="fas fa-mobile-alt"></i> M-Pesa Integration</div>
+                <h3>Cashless Payments, Zero Queues</h3>
+                <p>Customers pay water bills directly via M-Pesa. Payments are automatically reconciled in real-time.
+                </p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> Pay-bill and Till number support</li>
+                    <li><i class="fas fa-check-circle"></i> Automatic account reconciliation</li>
+                    <li><i class="fas fa-check-circle"></i> SMS payment confirmation</li>
+                    <li><i class="fas fa-check-circle"></i> Reduces cash handling risks</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,143 @@
+<!-- MajiCloud Hero Section -->
+<section class="maji-hero">
+    <style>
+        .maji-hero {
+            background: linear-gradient(135deg, #023e8a 0%, #0077b6 50%, #00b4d8 100%);
+            color: #fff;
+            padding: 100px 0 140px 0;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .maji-hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            background-image: url("data:image/svg+xml,%3Csvg width='60' height='60' viewBox='0 0 60 60' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' fill-rule='evenodd'%3E%3Cg fill='%23ffffff' fill-opacity='0.05'%3E%3Cpath d='M36 34v-4h-2v4h-4v2h4v4h2v-4h4v-2h-4zm0-30V0h-2v4h-4v2h4v4h2V6h4V4h-4zM6 34v-4H4v4H0v2h4v4h2v-4h4v-2H6zM6 4V0H4v4H0v2h4v4h2V6h4V4H6z'/%3E%3C/g%3E%3C/g%3E%3C/svg%3E");
+            pointer-events: none;
+        }
+
+        .maji-hero .hero-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
+            align-items: center;
+            position: relative;
+            z-index: 2;
+        }
+
+        .maji-badge {
+            background: rgba(255, 255, 255, 0.15);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+            padding: 8px 20px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 25px;
+            display: inline-block;
+        }
+
+        .maji-hero h1 {
+            font-size: 3.2rem;
+            font-weight: 800;
+            line-height: 1.15;
+            margin-bottom: 25px;
+        }
+
+        .maji-hero h1 span {
+            background: linear-gradient(90deg, #e0f7fa 0%, #80deea 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .maji-hero p {
+            font-size: 1.15rem;
+            color: rgba(255, 255, 255, 0.85);
+            margin-bottom: 40px;
+            max-width: 500px;
+        }
+
+        .maji-btn {
+            background: #fff;
+            color: #0077b6;
+            padding: 16px 40px;
+            border-radius: 50px;
+            font-weight: 700;
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            text-decoration: none;
+        }
+
+        .maji-btn:hover {
+            background: #e0f7fa;
+            transform: translateY(-3px);
+        }
+
+        .maji-btn-outline {
+            background: transparent;
+            border: 2px solid rgba(255, 255, 255, 0.4);
+            color: #fff;
+            margin-left: 15px;
+            box-shadow: none;
+        }
+
+        .maji-hero-img {
+            border-radius: 20px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.3);
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            width: 100%;
+        }
+
+        @media (max-width: 968px) {
+            .maji-hero .hero-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+
+            .maji-hero h1 {
+                font-size: 2.4rem;
+            }
+
+            .maji-hero p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+
+            .maji-hero-img {
+                display: none;
+            }
+        }
+    </style>
+    <div class="container">
+        <div class="hero-grid">
+            <div class="hero-text">
+                <span class="maji-badge">💧 Water Billing Platform</span>
+                <h1>Recover Every Drop of <span>Revenue</span></h1>
+                <p>A robust cloud-based water billing and customer management system designed for water utilities and
+                    SACCOs — improving revenue collection and customer service.</p>
+                <div class="hero-btns">
+                    <a href="#impact" class="maji-btn">
+                        <i class="fas fa-rocket"></i> Get Started
+                    </a>
+                    <a href="#steps" class="maji-btn maji-btn-outline">
+                        <i class="fas fa-play-circle"></i> See How It Works
+                    </a>
+                </div>
+            </div>
+            <div class="hero-img-box">
+                <img src="https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=800&h=600&fit=crop"
+                    alt="Water utility management dashboard" class="maji-hero-img">
+            </div>
+        </div>
+    </div>
+</section>

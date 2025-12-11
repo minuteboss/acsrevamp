@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shiriki365 - Association Management | Africa Cloud Space</title>
+    <meta name="description" content="Streamline membership management for associations, clubs, and SACCOs with our all-in-one cloud platform.">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Poppins:wght@500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <header id="header-slot" class="main-header"></header>
+    <main>
+        <div id="hero-slot"></div>
+        <div id="stats-slot"></div>
+        <div id="features-slot"></div>
+    </main>
+    <footer id="footer-slot" class="footer"></footer>
+    <script src="/js/loader.js"></script>
+    <script>
+        loadComponent('header-slot', '/header.html');
+        loadComponent('footer-slot', '/footer.html');
+        loadComponent('hero-slot', '/solutions/shiriki365/hero.html');
+        loadComponent('stats-slot', '/solutions/shiriki365/stats.html');
+        loadComponent('features-slot', '/solutions/shiriki365/features.html');
+    </script>
+</body>
+</html>

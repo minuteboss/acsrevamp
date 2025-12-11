@@ -1,0 +1,178 @@
+<!-- Cloud School Features Section -->
+<section id="features" class="cs-features">
+    <style>
+        .cs-features {
+            padding: 100px 0;
+            background: #f8fafc;
+        }
+
+        .cs-features .feature-row {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 80px;
+            align-items: center;
+            margin-bottom: 100px;
+        }
+
+        .cs-features .feature-row:last-child {
+            margin-bottom: 0;
+        }
+
+        .cs-features .feature-row.reverse {
+            direction: rtl;
+        }
+
+        .cs-features .feature-row.reverse>* {
+            direction: ltr;
+        }
+
+        .cs-features .feature-img {
+            border-radius: 20px;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            width: 100%;
+        }
+
+        .cs-features .feature-content {
+            padding: 20px 0;
+        }
+
+        .cs-features .feature-tag {
+            color: #0077b6;
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .cs-features .feature-tag i {
+            width: 40px;
+            height: 40px;
+            background: rgba(0, 119, 182, 0.1);
+            border-radius: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .cs-features .feature-content h3 {
+            font-size: 2rem;
+            font-weight: 700;
+            color: #021a2e;
+            margin-bottom: 20px;
+        }
+
+        .cs-features .feature-content p {
+            font-size: 1.05rem;
+            color: #64748b;
+            margin-bottom: 25px;
+            line-height: 1.8;
+        }
+
+        .cs-features .feature-list {
+            list-style: none;
+        }
+
+        .cs-features .feature-list li {
+            display: flex;
+            align-items: flex-start;
+            gap: 12px;
+            margin-bottom: 15px;
+            font-size: 0.95rem;
+            color: #475569;
+        }
+
+        .cs-features .feature-list li i {
+            color: #10b981;
+            margin-top: 4px;
+        }
+
+        @media (max-width: 968px) {
+            .cs-features .feature-row {
+                grid-template-columns: 1fr;
+                gap: 40px;
+            }
+
+            .cs-features .feature-row.reverse {
+                direction: ltr;
+            }
+
+            .cs-features .feature-content h3 {
+                font-size: 1.6rem;
+            }
+        }
+    </style>
+    <div class="container">
+        <!-- Feature 1: Digital Report Cards -->
+        <div class="feature-row">
+            <div class="feature-img-box">
+                <img src="https://images.unsplash.com/photo-1434030216411-0b793f4b4173?w=700&h=500&fit=crop"
+                    alt="Digital report cards on screen" class="feature-img">
+            </div>
+            <div class="feature-content">
+                <div class="feature-tag">
+                    <i class="fas fa-graduation-cap"></i>
+                    Report Cards
+                </div>
+                <h3>Digital Report Cards in Minutes</h3>
+                <p>Teachers enter marks once, and the system automatically calculates grades, rankings, and generates
+                    professional report cards ready for printing or sharing.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> Customizable grading scales</li>
+                    <li><i class="fas fa-check-circle"></i> Automatic class rankings & averages</li>
+                    <li><i class="fas fa-check-circle"></i> PDF report cards with school branding</li>
+                    <li><i class="fas fa-check-circle"></i> Historical performance tracking</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Feature 2: SMS Blasts -->
+        <div class="feature-row reverse">
+            <div class="feature-img-box">
+                <img src="https://images.unsplash.com/photo-1577563908411-5077b6dc7624?w=700&h=500&fit=crop"
+                    alt="Parent receiving SMS notification" class="feature-img">
+            </div>
+            <div class="feature-content">
+                <div class="feature-tag">
+                    <i class="fas fa-bell"></i>
+                    SMS Blasts
+                </div>
+                <h3>Keep Parents in the Loop, Automatically</h3>
+                <p>Send bulk SMS notifications to parents for fee reminders, exam results, events, and emergencies.
+                    Build trust through transparent communication.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> Bulk SMS to all parents or specific classes</li>
+                    <li><i class="fas fa-check-circle"></i> Automatic exam result notifications</li>
+                    <li><i class="fas fa-check-circle"></i> Attendance alerts for absent students</li>
+                    <li><i class="fas fa-check-circle"></i> Emergency broadcast messaging</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Feature 3: M-Pesa Till -->
+        <div class="feature-row">
+            <div class="feature-img-box">
+                <img src="https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=700&h=500&fit=crop"
+                    alt="M-Pesa payment integration" class="feature-img">
+            </div>
+            <div class="feature-content">
+                <div class="feature-tag">
+                    <i class="fas fa-wallet"></i>
+                    M-Pesa Till
+                </div>
+                <h3>Automated Fee Collection via M-Pesa</h3>
+                <p>Eliminate manual tracking and reduce revenue leakage. Parents pay directly via M-Pesa, and the system
+                    automatically updates student accounts in real-time.</p>
+                <ul class="feature-list">
+                    <li><i class="fas fa-check-circle"></i> Instant M-Pesa payment confirmation</li>
+                    <li><i class="fas fa-check-circle"></i> Automated fee reminders via SMS</li>
+                    <li><i class="fas fa-check-circle"></i> Complete payment history & receipts</li>
+                    <li><i class="fas fa-check-circle"></i> Fee structure customization per class</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</section>

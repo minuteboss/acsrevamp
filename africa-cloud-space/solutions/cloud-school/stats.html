@@ -1,0 +1,85 @@
+<!-- Cloud School Stats Section -->
+<section class="cs-stats">
+    <style>
+        .cs-stats {
+            background: #fff;
+            padding: 0 0 60px 0;
+        }
+
+        .cs-stats .stats-bar {
+            background: #fff;
+            padding: 50px 40px;
+            border-radius: 20px;
+            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.1);
+            margin-top: -80px;
+            position: relative;
+            z-index: 10;
+        }
+
+        .cs-stats .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 40px;
+            text-align: center;
+        }
+
+        .cs-stats .stat-item {
+            padding: 20px;
+            border-right: 1px solid #e2e8f0;
+        }
+
+        .cs-stats .stat-item:last-child {
+            border-right: none;
+        }
+
+        .cs-stats .stat-number {
+            font-family: 'Poppins', sans-serif;
+            font-size: 2.8rem;
+            font-weight: 800;
+            color: #0077b6;
+            line-height: 1;
+            margin-bottom: 10px;
+        }
+
+        .cs-stats .stat-label {
+            font-size: 1rem;
+            color: #64748b;
+            font-weight: 500;
+        }
+
+        @media (max-width: 968px) {
+            .cs-stats .stats-grid {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+
+            .cs-stats .stat-item {
+                border-right: none;
+                border-bottom: 1px solid #e2e8f0;
+                padding: 25px 0;
+            }
+
+            .cs-stats .stat-item:last-child {
+                border-bottom: none;
+            }
+        }
+    </style>
+    <div class="container">
+        <div class="stats-bar">
+            <div class="stats-grid">
+                <div class="stat-item">
+                    <div class="stat-number">10,000+</div>
+                    <div class="stat-label">Students Managed</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">500+</div>
+                    <div class="stat-label">Schools Onboarded</div>
+                </div>
+                <div class="stat-item">
+                    <div class="stat-number">100%</div>
+                    <div class="stat-label">Cloud-Based Solution</div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
